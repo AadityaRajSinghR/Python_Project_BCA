@@ -7,6 +7,10 @@
     <title>User Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loan.css') }}">
+
+
+
 </head>
 
 <body class="bg-gray-100">
@@ -29,104 +33,482 @@
                 </button>
             </nav>
 
-            <div class="max-w-4xl mx-auto mt-10 p-8 bg-gray-200 rounded-lg shadow-lg">
-                <h1 class="text-2xl font-bold text-red-600 mb-6">Loan Applying for Loan</h1>
+            <div class="mx-auto mt-10 p-8 rounded-lg shadow-lg">
+                <h1 class="text-2xl font-bold text-red-600 mb-6">Applying for Loan </h1>
 
-                <!-- Financial Information Section -->
-                <div class="mb-6">
-                    <h2 class="text-xl font-bold text-gray-700 mb-4">Financial Information</h2>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label for="loan-amount" class="block text-gray-700">Loan amount</label>
-                            <input type="text" id="loan-amount" class="w-full p-2 border border-gray-300 rounded-md"
-                                placeholder="Enter loan amount">
+                <div class="maincontainer flex flex-col items-center">
+                    <!-- Progress bar -->
+                    <div class="progress-container">
+                        <div class="progress" id="progress"></div>
+                        <div class="circle active">
+                            1
                         </div>
-                        <div>
-                            <label for="re-loan-amount" class="block text-gray-700">Re-type loan amount</label>
-                            <input type="text" id="re-loan-amount" class="w-full p-2 border border-gray-300 rounded-md"
-                                placeholder="Re-type loan amount">
+                        <div class="circle">
+                            2
                         </div>
-                        <div>
-                            <label for="bank-balance" class="block text-gray-700">Bank balance</label>
-                            <input type="text" id="bank-balance" class="w-full p-2 border border-gray-300 rounded-md"
-                                placeholder="Enter bank balance">
+                        <div class="circle">
+                            3
                         </div>
-                        <div>
-                            <label for="re-bank-balance" class="block text-gray-700">Re-type bank balance</label>
-                            <input type="text" id="re-bank-balance" class="w-full p-2 border border-gray-300 rounded-md"
-                                placeholder="Re-type bank balance">
+                        <div class="circle">
+                            4
+                        </div>
+                        <div class="circle">
+                            5
+                        </div>
+                        <div class="circle">
+                            6
+                        </div>
+                        <div class="circle">
+                            7
+                        </div>
+                        <div class="circle">
+                            8
+                        </div>
+                        <div class="circle">
+                            9
                         </div>
                     </div>
-                </div>
 
-                <!-- Loan Type Section -->
-                <div class="mb-6">
-                    <h2 class="text-xl font-bold text-gray-700 mb-4">Loans</h2>
-                    <div class="grid grid-cols-5 gap-4 text-center">
-                        <div>
-                            <input type="radio" name="loan-type" id="home-loan" class="mb-2">
-                            <label for="home-loan" class="block">
-                                <img src="https://placehold.co/50x50" alt="home loan" class="mx-auto">
-                                <span class="text-gray-700">Home Loan</span>
-                            </label>
+                    <!-- Form section -->
+                    <div class="form-container bg-zinc-100 border border-zinc-300 rounded-lg shadow w-full">
+
+                        <!-- Account Information (1) -->
+                        <div class="filds activeflds p-5">
+                            <div class="label flex gap-5 items-center mb-5">
+                                <i
+                                    class="ri-info-i border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[20px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
+                                <label class="font-medium text-[#B03A37] text-[20px]">Account Information</label>
+                            </div>
+                            <div class="mb-4 grid grid-cols-2 gap-4">
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Enter Exiting
+                                        Account number
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Enter exiting Account number"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">check
+                                        account</label>
+                                    <button onclick="check_account()"
+                                        class="mt-1 bg-[#B03A37] text-white px-16 py-2 rounded-full"> Check</button>
+                                </div>
+
+                            </div>
                         </div>
-                        <div>
-                            <input type="radio" name="loan-type" id="car-loan" class="mb-2">
-                            <label for="car-loan" class="block">
-                                <img src="https://placehold.co/50x50" alt="car loan" class="mx-auto">
-                                <span class="text-gray-700">Car Loan</span>
-                            </label>
+
+                        <!-- Personal Information (2) -->
+                        <div class="filds  p-5">
+                            <div class="label flex gap-5 items-center mb-5">
+                                <i
+                                    class="ri-user-line border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[16px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
+                                <label class="font-medium text-[#B03A37] text-[20px]">Personal Information</label>
+                            </div>
+                            <div class="mb-4 grid grid-cols-2 gap-4">
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Full Name
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Full Name"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="dob" class="block text-sm font-medium text-gray-700">Date Of Birth
+                                        *</label>
+                                    <input type="date" id="dob" aria-label="Date of Birth"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="gender" class="block text-sm font-medium text-gray-700">Select Gender
+                                        *</label>
+                                    <select id="gender" aria-label="Select Gender"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                        <option>Select Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="gender" class="block text-sm font-medium text-gray-700">Marital Status
+                                        *</label>
+                                    <select id="gender" aria-label="Marital Status"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                        <option>Marital Status</option>
+                                        <option value="single">Single</option>
+                                        <option value="married">Married</option>
+                                        <option value="divorce">Divorce</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fathername" class="block text-sm font-medium text-gray-700">Father Name
+                                        *</label>
+                                    <input type="text" id="fathername" aria-label="Father Name"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="mothername" class="block text-sm font-medium text-gray-700">Mother Name
+                                        *</label>
+                                    <input type="text" id="mothername" aria-label="Mother Name"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <input type="radio" name="loan-type" id="education-loan" class="mb-2">
-                            <label for="education-loan" class="block">
-                                <img src="https://placehold.co/50x50" alt="education loan" class="mx-auto">
-                                <span class="text-gray-700">Education Loan</span>
-                            </label>
+
+                        <!-- Contact Information (3) -->
+                        <div class="filds  p-5">
+                            <div class="label flex gap-5 items-center mb-5">
+                                <i
+                                    class="ri-contacts-line border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[16px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
+                                <label class="font-medium text-[#B03A37] text-[20px]">Contact Information</label>
+                            </div>
+
+                            <div class="mb-4 grid grid-cols-2 gap-4">
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Mobile No
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Mobile No"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Email Id
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Email Id"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Address Line 1
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Address Line 1"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Address Line 2
+                                    </label>
+                                    <input type="text" id="fullname" aria-label="Address Line 2"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="gender" class="block text-sm font-medium text-gray-700">State
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="State"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="gender" class="block text-sm font-medium text-gray-700">Pin Code
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Pin Code"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+
+
+                            </div>
                         </div>
-                        <div>
-                            <input type="radio" name="loan-type" id="gold-loan" class="mb-2">
-                            <label for="gold-loan" class="block">
-                                <img src="https://placehold.co/50x50" alt="gold loan" class="mx-auto">
-                                <span class="text-gray-700">Gold Loan</span>
-                            </label>
+
+                        <!-- Identification Information (4) -->
+                        <div class="filds  p-5">
+                            <div class="label flex gap-5 items-center mb-5">
+                                <i
+                                    class="ri-contacts-line border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[16px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
+                                <label class="font-medium text-[#B03A37] text-[20px]">Identification Information</label>
+                            </div>
+
+                            <div class="mb-4 grid grid-cols-2 gap-4">
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Aadhar Number
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Aadhar Number"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Pan Card
+                                        Number
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Pan Card Number"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+
+                            </div>
                         </div>
-                        <div>
-                            <input type="radio" name="loan-type" id="bike-loan" class="mb-2">
-                            <label for="bike-loan" class="block">
-                                <img src="https://placehold.co/50x50" alt="bike loan" class="mx-auto">
-                                <span class="text-gray-700">Bike Loan</span>
-                            </label>
+
+                        <!-- Employment  Information  (5)-->
+                        <div class="filds  p-5">
+                            <div class="label flex gap-5 items-center mb-5">
+                                <i
+                                    class="ri-contacts-line border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[16px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
+                                <label class="font-medium text-[#B03A37] text-[20px]">Employment Information</label>
+                            </div>
+
+                            <div class="mb-4 grid grid-cols-2 gap-4">
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Employment
+                                        Status
+                                        *</label>
+                                    <select id="gender" aria-label="Select Gender"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                        <option value="Employed">Employed</option>
+                                        <option value="Un-Employed">Un-Employed</option>
+                                        <option value="Self-Employed">Self-Employed</option>
+                                        <option value="Student">Student</option>
+                                        <option value="Retired">Retired</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Net Monthly
+                                        Income
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Net Monthly Income"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Monthly
+                                        Housing Income
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Monthly Housing Income"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Loan Details  (6)-->
+                        <div class="filds  p-5">
+                            <div class="label flex gap-5 items-center mb-5">
+                                <i
+                                    class="ri-contacts-line border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[16px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
+                                <label class="font-medium text-[#B03A37] text-[20px]">Loan Details</label>
+                            </div>
+
+                            <div class="mb-4 grid grid-cols-1 gap-4">
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Type of Loan
+                                        *</label>
+                                    <div class="w-full flex items-center justify-between">
+                                        <div class="mr-2 flex flex-col items-start border-gray-200 py-2">
+
+                                            <input type="radio" name="LoanType" id="">
+                                            <i
+                                                class="ri-home-heart-line text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl"></i>
+                                        </div>
+                                        <div class="mr-2 flex flex-col items-start border-gray-200 py-2">
+
+                                            <input type="radio" name="LoanType" id="">
+                                            <i
+                                                class="ri-car-line text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl"></i>
+                                        </div>
+                                        <div class="mr-2 flex flex-col items-start border-gray-200 py-2">
+
+                                            <input type="radio" name="LoanType" id="">
+                                            <i
+                                                class="ri-user-line text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl"></i>
+                                        </div>
+                                        <div class="mr-2 flex flex-col items-start border-gray-200 py-2">
+                                            <label for="gold_loan"></label>
+                                            <input type="radio" name="LoanType" id="">
+                                            <i
+                                                class=" w-16 h-16 bg-no-repeat bg-center bg-[url('{{url_for('static', filename='img/icons/gold.png')}}')] text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+
+                                    <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                        <label for="fullname" class="block text-sm font-medium text-gray-700">Loan
+                                            Amount
+                                            *</label>
+                                        <input type="text" id="fullname" aria-label="Loan Amount"
+                                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                    </div>
+                                    <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                        <label for="fullname" class="block text-sm font-medium text-gray-700">Loan Term
+                                            in
+                                            Days
+                                            *</label>
+                                        <input type="text" id="fullname" aria-label="Loan Term in Days"
+                                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <!-- Financial Information:  (7)-->
+                        <div class="filds  p-5">
+                            <div class="label flex gap-5 items-center mb-5">
+                                <i
+                                    class="ri-contacts-line border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[16px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
+                                <label class="font-medium text-[#B03A37] text-[20px]">Financial Information</label>
+                            </div>
+
+                            <div class="mb-4 grid grid-cols-2 gap-4">
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Do you have
+                                        any outstanding loans *</label>
+                                    <select id="gender" aria-label="Select Gender"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                        <option value=""> Select One </option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">How much is
+                                        your
+                                        outstanding loan amount?
+                                        *</label>
+                                    <input type="text" value="0" id="fullname" aria-label="Loan Amount"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">In how many
+                                        installments will you make the repayment?
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Loan Term"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Guarantor’s  Information:  (8)-->
+                        <div class="filds  p-5">
+                            <div class="label flex gap-5 items-center mb-5">
+                                <i
+                                    class="ri-contacts-line border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[16px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
+                                <label class="font-medium text-[#B03A37] text-[20px]">Guarantor's Information</label>
+                            </div>
+
+                            <div class="mb-4 grid grid-cols-2 gap-4">
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Full Name
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Full Name"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="dob" class="block text-sm font-medium text-gray-700">Date Of Birth
+                                        *</label>
+                                    <input type="date" id="dob" aria-label="Date of Birth"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="gender" class="block text-sm font-medium text-gray-700">Select
+                                        Relationship
+                                        *</label>
+                                    <select id="gender" aria-label="Select Gender"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                        <option>Select Relationship</option>
+                                        <option value="spouse">Spouse</option>
+                                        <option value="child">Child</option>
+                                        <option value="sibling">Sibling</option>
+                                        <option value="parent">Parent</option>
+                                        <option value="grandparent">Grandparent</option>
+                                        <option value="grandchild">Grandchild</option>
+                                    </select>
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Mobile No
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Mobile No"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Email Id
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Email Id"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Address Line 1
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Address Line 1"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="fullname" class="block text-sm font-medium text-gray-700">Address Line 2
+                                    </label>
+                                    <input type="text" id="fullname" aria-label="Address Line 2"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="gender" class="block text-sm font-medium text-gray-700">State
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="State"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+
+                                <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                                    <label for="gender" class="block text-sm font-medium text-gray-700">Pin Code
+                                        *</label>
+                                    <input type="text" id="fullname" aria-label="Pin Code"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Consent & Agreement  (9)-->
+                        <div class="filds  p-5">
+                            <div class="label flex gap-5 items-center mb-5">
+                                <i
+                                    class="ri-contacts-line border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[16px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
+                                <label class="font-medium text-[#B03A37] text-[20px]">Consent & Agreement:</label>
+                            </div>
+
+                            <div class="mb-4 grid grid-cols-2 gap-4">
+                                <div class="mt-1 flex items-start border-gray-200 py-2">
+                                    <label for="gender" class="block text-sm font-medium text-gray-700">upload Pan 
+                                        Card File(*.pdf)
+                                        *</label>
+                                    <input type="file" id="fullname" aria-label="Pin Code"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded" accept="application/pdf">
+                                </div>
+                                <div class="mt-1 flex items-start border-gray-200 py-2">
+                                    <label for="gender" class="block text-sm font-medium text-gray-700">upload Aadhar 
+                                        Card File(*.pdf)
+                                        *</label>
+                                    <input type="file" id="fullname" aria-label="Pin Code"
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded" accept="application/pdf">
+                                </div>
+                                <div class="mt-1 flex items-start border-gray-200 py-2">
+                                    <input type="checkbox" id="fullname" aria-label="Pin Code"
+                                        class=" mt-1 mr-2 p-2 outline-none border border-gray-300 rounded">
+                                    <label for="gender" class="block text-sm font-medium text-gray-700">I read all term
+                                        and Condition
+                                        *</label>
+                                </div>
+                                <div class="mt-1 flex items-start border-gray-200 py-2">
+                                    <input type="checkbox" id="fullname" aria-label="Pin Code"
+                                        class=" mt-1 mr-2 p-2 outline-none border border-gray-300 rounded">
+                                    <label for="gender" class="block text-sm font-medium text-gray-700">I give the
+                                        Authorization to Perform Credit Check
+                                        *</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Time Duration Section -->
-                <div class="mb-6 grid grid-cols-2 gap-4">
-                    <div>
-                        <label for="time-duration" class="block text-gray-700">Time Duration</label>
-                        <input type="text" id="time-duration" class="w-full p-2 border border-gray-300 rounded-md"
-                            placeholder="Enter time duration">
-                    </div>
-                    <div>
-                        <label for="re-time-duration" class="block text-gray-700">Re-type Time Duration</label>
-                        <input type="text" id="re-time-duration" class="w-full p-2 border border-gray-300 rounded-md"
-                            placeholder="Re-type time duration">
-                    </div>
-                </div>
+                    <div class="mb-5">
 
-                <!-- Submit Button -->
-                <div class="text-center">
-                    <button class="bg-red-500 text-white py-2 px-6 rounded-full hover:bg-red-600">Apply</button>
+                        <button class="btn" id="prev" disabled>Prev</button>
+                        <button class="btn" id="next">Next</button>
+                    </div>
                 </div>
             </div>
+
         </div>
+    </div>
 
     </div>
 
 
 
 
+    <script src="{{ url_for('static', filename='Js/loan.js') }}"></script>
 
 </body>
 
