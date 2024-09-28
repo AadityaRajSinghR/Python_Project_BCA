@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+
+
+
+</head>
+
+<body class="bg-white flex items-center justify-center">
+    <div class="flex w-full bg-white rounded-3xl">
+        <!-- Left section with form -->
+        <div class="w-[60%] flex flex-col items-center justify-start  p-8">
+            <!-- Logo -->
+            <div class="w-full flex justify-start">
+                <a href="/">
+                    <div class="flex justify-center items-center mb-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" fill="none">
+                            <path d="M10 20.4999L20 10.4999L30 20.4999L20 30.4999L10 20.4999Z" fill="red" />
+                            <path d="M36.6667 13.8333L30 20.4999V10.4999H20L26.6667 3.83325H36.6667V13.8333Z"
+                                fill="red" />
+                            <path d="M36.6667 27.1666L30 20.4999V30.4999H20L26.6667 37.1666H36.6667V27.1666Z"
+                                fill="red" />
+                            <path d="M3.33337 27.1666L10 20.4999V30.4999H20L13.3334 37.1666H3.33337L3.33337 27.1666Z"
+                                fill="red" />
+                            <path d="M3.33337 13.8333L10 20.4999V10.4999H20L13.3334 3.83325H3.33337L3.33337 13.8333Z"
+                                fill="red" />
+                        </svg>
+                        <div class="ml-4 flex flex-col items-start">
+                            <h1 class="text-red-600 ">AU Bank</h1>
+                            <p class="text-xs text-red-600">Avanika Trust & Savings</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Avatar -->
+            <div class="bg-[#D7847B] rounded-3xl w-[400px] p-8 mt-4">
+                <div class="relative flex justify-center">
+                    <div id="avatar" class="bg-cover bg-center bg-gray-300 rounded-full w-[150px] h-[150px]">
+
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <h1 class="text-center text-xl font-semibold my-6 text-black">Welcome Back!</h1>
+
+                <!-- Form Fields -->
+                <form class="space-y-4">
+                    <input type="text" placeholder="Username"
+                        class="w-full p-3 rounded-full bg-white text-black focus:outline-none">
+                    <input type="password" placeholder="Password"
+                        class="w-full p-3 rounded-full bg-white text-black focus:outline-none">
+
+                    <div class="flex justify-between items-center text-sm text-[#E4ADA7] mt-1">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="admin" class="mr-1">
+                            <label for="admin">You are Admin</label>
+                        </div>
+                        <a href="#" class="text-[#5B5B5B]">Forgot Your Password?</a>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-gray-500 text-white p-3 rounded-full font-semibold mt-4">Login</button>
+                </form>
+
+                <!-- Divider -->
+                <div class="flex items-center justify-between my-6">
+                    <hr class="w-1/3 border-[#5B5B5B]">
+                    <span class="text-sm text-[#5B5B5B]">OR</span>
+                    <hr class="w-1/3 border-[#5B5B5B]">
+                </div>
+
+                <!-- New User -->
+                <div class="text-center">
+                    <p class="text-[#5B5B5B]">New to our family? <a href="/Account_open" class="text-black font-semibold">Click
+                            Hear</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right section (empty placeholder) -->
+        <div class="w-[40%] bg-gray-300 flex justify-center items-center">
+            <div class="w-[300px] h-[300px] bg-gray-400"></div>
+        </div>
+    </div>
+
+    <!-- img id="mying" src="img-png -->
+    <script language="javascript" type="text/javascript">
+        // Create an array to store the images
+        var images = [];
+
+        // Preload the images
+        for (let i = 1; i <= 37; i++) {
+            const img = new Image();
+            img.src = " {{url_for('static', filename='img/avatars/Avatar1-')}}" + i + ".png";
+            images.push(img);
+        }
+
+        // Frame control
+        var currentFrame = 0;
+        const totalFrames = images.length;
+        const frameRate = 20; // 20 frames per second
+        const frameDuration = 1000 / frameRate; // Time for each frame (in ms)
+        var lastFrameTime = 0;
+
+        // Get the avatar div
+        const avatar = document.getElementById("avatar");
+
+        // Function to update the image (frame)
+        function updateFrame(timestamp) {
+            if (!lastFrameTime) {
+                lastFrameTime = timestamp;
+            }
+
+            const timeElapsed = timestamp - lastFrameTime;
+
+            if (timeElapsed >= frameDuration) {
+                avatar.style.backgroundImage = "url(" + images[currentFrame].src + ")";
+                currentFrame = (currentFrame + 1) % totalFrames; // Loop the frames
+                lastFrameTime = timestamp;
+            }
+
+            // Use requestAnimationFrame to ensure smooth animation
+            requestAnimationFrame(updateFrame);
+        }
+
+        // Start the frame update loop
+        window.onload = function () {
+            requestAnimationFrame(updateFrame);
+        };
+    </script>
+</body>
+
+</html>

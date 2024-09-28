@@ -1,0 +1,96 @@
+<!-- Sidebar -->
+<div class="w-[20%] bg-[#D65B5B] text-white flex justify-start fixed flex-col h-screen ">
+
+    <div class="p-10">
+        <!-- Logo -->
+        <div class="w-full flex justify-start">
+            <a href="#">
+                <div class="flex justify-center items-center mb-10">
+                    <img src="{{url_for('static', filename='svg/logo.svg')}}" alt="">
+                    <div class="ml-4 flex flex-col items-start">
+                        <h1 class="text-white-600 ">AU Bank</h1>
+                        <p class="text-xs text-white-600">Avanika Trust & Savings</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Menu -->
+        <ul class="space-y-4">
+            <li>
+                <a href="/Dashboard">
+
+                    <button class="flex items-center w-full 
+                {% if page == 'Dashboard' %} text-gray-100 bg-gray-600 
+                {% else %} bg-gray-100 text-gray-600 
+                {% endif %} 
+                text-left rounded-lg py-2 px-5 gap-2">
+                        <i class="ri-dashboard-horizontal-line mr-2"></i>
+                        <span>Dashboard</span>
+                    </button>
+                </a>
+
+            </li>
+            <li>
+                <a href="/Admin_Accoun_open">
+                    <button class="flex items-center w-full 
+                {% if page == 'Account_open' %} text-gray-100 bg-gray-600 
+                {% else %} bg-gray-100 text-gray-600 
+                {% endif %} 
+                text-left rounded-lg py-2 px-5 gap-2">
+                        <i class="ri-user-add-line mr-2"></i>
+                        <span>Create Account</span>
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="/All_users">
+                    <button class="flex items-center w-full 
+                {% if page == 'All_users' %} text-gray-100 bg-gray-600 
+                {% else %} bg-gray-100 text-gray-600 
+                {% endif %} 
+                text-left rounded-lg py-2 px-5 gap-2">
+                        <i class="ri-group-line mr-2"></i>
+                        <span>All Users</span>
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="/Loan_Apply">
+                    <button class="flex items-center w-full 
+                {% if page == 'Loan_Apply' %} text-gray-100 bg-gray-600 
+                {% else %} bg-gray-100 text-gray-600 
+                {% endif %} 
+                text-left rounded-lg py-2 px-5 gap-2"><i class="ri-hand-coin-line mr-2"></i>
+                        <span>Apply Loan</span>
+                    </button>
+                </a>
+            </li>
+
+            <li>
+                <a href="/Loan_Applications">
+                    <button class="flex items-center w-full 
+                {% if page == 'Loan_Applications' %} text-gray-100 bg-gray-600 
+                {% else %} bg-gray-100 text-gray-600 
+                {% endif %} 
+                text-left rounded-lg py-2 px-5 gap-2"><i class="ri-hand-coin-line mr-2"></i>
+                        <span>Loan Aplications</span>
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="/EMI_Calculator">
+                    <button class="flex items-center w-full 
+                {% if page == 'EMI_Calculator' %} text-gray-100 bg-gray-600 
+                {% else %} bg-gray-100 text-gray-600 
+                {% endif %} 
+                text-left rounded-lg py-2 px-5 gap-2">
+                <i class="ri-calculator-line mr-2"></i>
+                        <span>Calculate EMI</span>
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>

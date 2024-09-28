@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="flex h-screen">
+
+        <!-- Include the sidebar in the layout -->
+        {% include 'Admin/sidebar.html' %}
+
+        <!-- Main Content -->
+        <div class="flex-1 ml-[20%] w-[80%] p-6">
+            <!-- All Users Header -->
+            <div class="flex items-center justify-between bg-[#D65B5B] p-4 rounded-t-lg">
+                <div class="flex items-center text-white">
+                    <i class="ri-admin-line text-2xl mr-2 "></i>
+                    <h2 class="text-xl font-semibold">All Users</h2>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="bg-white text-[#D65B5B] p-2 rounded-full">
+                        <div class="w-6 h-6">
+                            <i class="ri-notification-line"></i>
+                        </div>
+                    </button>
+                    <button class="bg-white text-[#D65B5B] p-2 rounded-full">
+                        <div class="w-6 h-6">
+
+                            <i class="ri-logout-circle-r-line"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search bar -->
+            <div class="bg-white p-4 rounded-lg mt-4">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-1">
+                        <input class="w-full p-2 rounded-lg outline-none border border-gray-300" type="text"
+                            placeholder="Search by Account No or Contact">
+                    </div>
+                    <button class="bg-[#D65B5B] text-white px-4 py-2 rounded-lg">
+                        Search
+                    </button>
+                </div>
+            </div>
+
+            <!-- User Table -->
+            <div class="bg-gray-200 p-4 rounded-b-lg mt-4">
+                <table class="w-full text-left bg-white rounded-lg shadow">
+                    <thead class="bg-gray-300">
+                        <tr>
+                            <th class="px-4 py-2">User Name</th>
+                            <th class="px-4 py-2">Customer No</th>
+                            <th class="px-4 py-2">Account No</th>
+                            <th class="px-4 py-2">E-mail</th>
+                            <th class="px-4 py-2">Phone no</th>
+                            <th class="px-4 py-2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table__row">
+                            <td class="border px-4 py-2">Devraj Dev</td>
+                            <td class="border px-4 py-2">12345678901234</td>
+                            <td class="border px-4 py-2">12345678901234</td>
+                            <td class="border px-4 py-2">abc@gmail.com</td>
+                            <td class="border px-4 py-2">09876543211</td>
+                            <td class="border px-4 py-2">
+                                <a href="#">
+
+                                    <i class="ri-eye-line text-[#D65B5B] text-xl cursor-pointer"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class=" table__row">
+                            <td class="border px-4 py-2">Riya Sumani</td>
+                            <td class="border px-4 py-2">56523211305060</td>
+                            <td class="border px-4 py-2">56523211305060</td>
+                            <td class="border px-4 py-2">riya@gmail.com</td>
+                            <td class="border px-4 py-2">9123456789</td>
+                            <td class="border px-4 py-2">
+                                <a href="#">
+
+                                    <i class="ri-eye-line text-[#D65B5B] text-xl cursor-pointer"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        const tableRows = document.querySelectorAll('.table__row');
+        tableRows.forEach((row, index) => {
+            if (index % 2 === 0) {
+                row.classList.add('bg-gray-200');  // Apply background color for even rows
+            } else {
+                row.classList.add('bg-white');     // Apply background color for odd rows
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

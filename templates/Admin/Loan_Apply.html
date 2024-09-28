@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="flex h-screen">
+
+        <!-- Include the sidebar in the layout -->
+        {% include 'Admin/sidebar.html' %}
+
+        <!-- Main Content -->
+        <div class="flex-1 ml-[20%] w-[80%] p-6">
+            <nav class="bg-[#D65B5B] p-4 flex justify-between items-center">
+                <div class="text-white text-lg font-bold">Loan Application</div>
+                <button class="text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12h18m-6-6l6 6-6 6" />
+                    </svg>
+                </button>
+            </nav>
+
+            <div class="max-w-4xl mx-auto mt-10 p-8 bg-gray-200 rounded-lg shadow-lg">
+                <h1 class="text-2xl font-bold text-red-600 mb-6">Loan Applying for Loan</h1>
+
+                <!-- Financial Information Section -->
+                <div class="mb-6">
+                    <h2 class="text-xl font-bold text-gray-700 mb-4">Financial Information</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="loan-amount" class="block text-gray-700">Loan amount</label>
+                            <input type="text" id="loan-amount" class="w-full p-2 border border-gray-300 rounded-md"
+                                placeholder="Enter loan amount">
+                        </div>
+                        <div>
+                            <label for="re-loan-amount" class="block text-gray-700">Re-type loan amount</label>
+                            <input type="text" id="re-loan-amount" class="w-full p-2 border border-gray-300 rounded-md"
+                                placeholder="Re-type loan amount">
+                        </div>
+                        <div>
+                            <label for="bank-balance" class="block text-gray-700">Bank balance</label>
+                            <input type="text" id="bank-balance" class="w-full p-2 border border-gray-300 rounded-md"
+                                placeholder="Enter bank balance">
+                        </div>
+                        <div>
+                            <label for="re-bank-balance" class="block text-gray-700">Re-type bank balance</label>
+                            <input type="text" id="re-bank-balance" class="w-full p-2 border border-gray-300 rounded-md"
+                                placeholder="Re-type bank balance">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loan Type Section -->
+                <div class="mb-6">
+                    <h2 class="text-xl font-bold text-gray-700 mb-4">Loans</h2>
+                    <div class="grid grid-cols-5 gap-4 text-center">
+                        <div>
+                            <input type="radio" name="loan-type" id="home-loan" class="mb-2">
+                            <label for="home-loan" class="block">
+                                <img src="https://placehold.co/50x50" alt="home loan" class="mx-auto">
+                                <span class="text-gray-700">Home Loan</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="loan-type" id="car-loan" class="mb-2">
+                            <label for="car-loan" class="block">
+                                <img src="https://placehold.co/50x50" alt="car loan" class="mx-auto">
+                                <span class="text-gray-700">Car Loan</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="loan-type" id="education-loan" class="mb-2">
+                            <label for="education-loan" class="block">
+                                <img src="https://placehold.co/50x50" alt="education loan" class="mx-auto">
+                                <span class="text-gray-700">Education Loan</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="loan-type" id="gold-loan" class="mb-2">
+                            <label for="gold-loan" class="block">
+                                <img src="https://placehold.co/50x50" alt="gold loan" class="mx-auto">
+                                <span class="text-gray-700">Gold Loan</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="loan-type" id="bike-loan" class="mb-2">
+                            <label for="bike-loan" class="block">
+                                <img src="https://placehold.co/50x50" alt="bike loan" class="mx-auto">
+                                <span class="text-gray-700">Bike Loan</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Duration Section -->
+                <div class="mb-6 grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="time-duration" class="block text-gray-700">Time Duration</label>
+                        <input type="text" id="time-duration" class="w-full p-2 border border-gray-300 rounded-md"
+                            placeholder="Enter time duration">
+                    </div>
+                    <div>
+                        <label for="re-time-duration" class="block text-gray-700">Re-type Time Duration</label>
+                        <input type="text" id="re-time-duration" class="w-full p-2 border border-gray-300 rounded-md"
+                            placeholder="Re-type time duration">
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button class="bg-red-500 text-white py-2 px-6 rounded-full hover:bg-red-600">Apply</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
