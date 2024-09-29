@@ -34,7 +34,14 @@
             </nav>
 
             <div class="mx-auto mt-10 p-8 rounded-lg shadow-lg">
-                <h1 class="text-2xl font-bold text-red-600 mb-6">Applying for Loan </h1>
+                <div class="flex justify-between">
+
+                    <h1 class="text-2xl font-bold text-red-600 mb-6">Applying for Loan </h1>
+
+                    <p class="text-gray-600 mb-6 text-red-600">
+                        Fields marked with an asterisk ( * ) are required
+                    </p>
+                </div>
 
                 <div class="maincontainer flex flex-col items-center">
                     <!-- Progress bar -->
@@ -287,33 +294,45 @@
                                     <label for="fullname" class="block text-sm font-medium text-gray-700">Type of Loan
                                         *</label>
                                     <div class="w-full flex items-center justify-between">
-                                        <div class="mr-2 flex flex-col items-start border-gray-200 py-2">
 
-                                            <input type="radio" name="LoanType" id="">
-                                            <i
-                                                class="ri-home-heart-line text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl"></i>
-                                        </div>
+                                        <!-- Home Loan Option -->
                                         <div class="mr-2 flex flex-col items-start border-gray-200 py-2">
+                                            <input type="radio" name="LoanType" id="home_loan">
+                                            <label for="home_loan">
+                                                <i
+                                                    class="ri-home-heart-line text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl"></i>
+                                            </label>
+                                        </div>
 
-                                            <input type="radio" name="LoanType" id="">
-                                            <i
-                                                class="ri-car-line text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl"></i>
-                                        </div>
+                                        <!-- Car Loan Option -->
                                         <div class="mr-2 flex flex-col items-start border-gray-200 py-2">
+                                            <input type="radio" name="LoanType" id="car_loan">
+                                            <label for="car_loan">
+                                                <i
+                                                    class="ri-car-line text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl"></i>
+                                            </label>
+                                        </div>
 
-                                            <input type="radio" name="LoanType" id="">
-                                            <i
-                                                class="ri-user-line text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl"></i>
-                                        </div>
+                                        <!-- Personal Loan Option -->
                                         <div class="mr-2 flex flex-col items-start border-gray-200 py-2">
-                                            <label for="gold_loan"></label>
-                                            <input type="radio" name="LoanType" id="">
-                                            <i
-                                                class=" w-16 h-16 bg-no-repeat bg-center bg-[url('{{url_for('static', filename='img/icons/gold.png')}}')] text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl"></i>
+                                            <input type="radio" name="LoanType" id="personal_loan">
+                                            <label for="personal_loan">
+                                                <i
+                                                    class="ri-user-line text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl"></i>
+                                            </label>
+                                        </div>
+
+                                        <!-- Gold Loan Option -->
+                                        <div class="mr-2 flex flex-col items-start border-gray-200 py-2">
+                                            <input type="radio" name="LoanType" id="gold_loan">
+                                            <label for="gold_loan"
+                                                class=" w-16 h-16  bg-no-repeat bg-center bg-[url('{{url_for('static', filename='img/icons/gold.png')}}')] text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl">
+                                            </label>
                                         </div>
 
                                     </div>
                                 </div>
+
                                 <div class="grid grid-cols-2 gap-4">
 
                                     <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
@@ -461,18 +480,20 @@
 
                             <div class="mb-4 grid grid-cols-2 gap-4">
                                 <div class="mt-1 flex items-start border-gray-200 py-2">
-                                    <label for="gender" class="block text-sm font-medium text-gray-700">upload Pan 
+                                    <label for="gender" class="block text-sm font-medium text-gray-700">upload Pan
                                         Card File(*.pdf)
                                         *</label>
                                     <input type="file" id="fullname" aria-label="Pin Code"
-                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded" accept="application/pdf">
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded"
+                                        accept="application/pdf">
                                 </div>
                                 <div class="mt-1 flex items-start border-gray-200 py-2">
-                                    <label for="gender" class="block text-sm font-medium text-gray-700">upload Aadhar 
+                                    <label for="gender" class="block text-sm font-medium text-gray-700">upload Aadhar
                                         Card File(*.pdf)
                                         *</label>
                                     <input type="file" id="fullname" aria-label="Pin Code"
-                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded" accept="application/pdf">
+                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded"
+                                        accept="application/pdf">
                                 </div>
                                 <div class="mt-1 flex items-start border-gray-200 py-2">
                                     <input type="checkbox" id="fullname" aria-label="Pin Code"
