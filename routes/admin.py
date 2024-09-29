@@ -1,6 +1,9 @@
 from flask import Blueprint, render_template
 
+from backend.getData import fetch_all_data
+
 admin = Blueprint('admin', __name__)
+
 
 
 # Admin Routes
@@ -17,7 +20,8 @@ def Admin_Account_open():
 @admin.route('/All_users')
 def All_users():
     page="All_users"
-    return render_template('Admin/All_users.html', page=page)
+    users = fetch_all_data()
+    return render_template('Admin/All_users.html', page=page, users=users)
 
 @admin.route('/Loan_Apply')
 def Loan_Apply():
