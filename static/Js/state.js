@@ -1,7 +1,7 @@
 // Array of countries
 const indianStatesAndUTs = [
     // States
-    " If you are from Other Countries ",
+    "*Other Countries ",
     "Andhra Pradesh",
     "Arunachal Pradesh",
     "Assam",
@@ -44,7 +44,7 @@ const indianStatesAndUTs = [
 
 
 // Reference to the select element
-const StateSelect = document.getElementById('State');
+const StateSelect = document.getElementById('state');
 
 // Dynamically generate state options
 indianStatesAndUTs.forEach(state => {
