@@ -48,61 +48,52 @@
 
         <div class="grid grid-cols-1 gap-8">
             <div>
-
-
                 <div class="mb-4 grid grid-cols-2 gap-4">
                     <!-- Select Country -->
                     <div class="mb-4">
-                        <label for="country" class="block text-sm font-medium text-gray-700">Country Of Nationality
-                            *</label>
+                        <label for="country" class="block text-sm font-medium text-gray-700">Country Of Nationality *</label>
                         <select id="country" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                             <option>Select Country</option>
                         </select>
                     </div>
-                    <!-- Select Occupation -->
+                    <!-- Enter Occupation -->
                     <div class="mb-4">
-                        <label for="country" class="block text-sm font-medium text-gray-700">Enter Occupation
-                            *</label>
-                        <input type="text" id="fullname"
-                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <label for="occupation" class="block text-sm font-medium text-gray-700">Enter Occupation *</label>
+                        <input type="text" id="occupation" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                     </div>
                 </div>
-
+        
                 <div class="mb-4">
-                    <i
-                        class="ri-user-line bg-[#B03A37] text-[#D9D9D9]   mr-2 text-[25px] font-bold p-2 outline-none border border-gray-300 rounded-full"></i>
+                    <i class="ri-user-line bg-[#B03A37] text-[#D9D9D9] mr-2 text-[25px] font-bold p-2 outline-none border border-gray-300 rounded-full"></i>
                     <label class="font-medium text-[#B03A37] text-[20px]">Personal Information</label>
                 </div>
-
+        
                 <div class="mb-4 grid grid-cols-2 gap-4">
                     <div class="mt-1 border-gray-200 py-2">
                         <label for="fullname" class="block text-sm font-medium text-gray-700">Full Name *</label>
-                        <input type="text" id="fullname"
-                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <input type="text" id="fullname1" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                     </div>
                     <div class="mt-1 border-gray-200 py-2">
-                        <label for="fullname" class="block text-sm font-medium text-gray-700">Full Name *</label>
-                        <input type="text" id="fullname"
-                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <label for="fullname2" class="block text-sm font-medium text-gray-700">Full Name *</label>
+                        <input type="text" id="fullname2" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                     </div>
                 </div>
-
+        
                 <div class="mb-4 grid grid-cols-2 gap-4">
                     <div class="mt-1 border-gray-200 py-2">
-                        <label for="dob" class="block text-sm font-medium text-gray-700">Date Of Birth *</label>
-                        <input type="date" id="dob" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-
+                        <label for="dob1" class="block text-sm font-medium text-gray-700">Date Of Birth *</label>
+                        <input type="date" id="dob1" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                     </div>
                     <div class="mt-1 border-gray-200 py-2">
-                        <label for="dob" class="block text-sm font-medium text-gray-700">Date Of Birth *</label>
-                        <input type="date" id="dob" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <label for="dob2" class="block text-sm font-medium text-gray-700">Date Of Birth *</label>
+                        <input type="date" id="dob2" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                     </div>
                 </div>
-
+        
                 <div class="mb-4 grid grid-cols-2 gap-4">
                     <div class="mt-1 border-gray-200 py-2">
-                        <label for="gender" class="block text-sm font-medium text-gray-700">Select Gender *</label>
-                        <select id="gender" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <label for="gender1" class="block text-sm font-medium text-gray-700">Select Gender *</label>
+                        <select id="gender1" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                             <option>Select Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -110,8 +101,8 @@
                         </select>
                     </div>
                     <div class="mt-1 border-gray-200 py-2">
-                        <label for="gender" class="block text-sm font-medium text-gray-700">Select Gender *</label>
-                        <select id="gender" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <label for="gender2" class="block text-sm font-medium text-gray-700">Select Gender *</label>
+                        <select id="gender2" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                             <option>Select Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -119,249 +110,187 @@
                         </select>
                     </div>
                 </div>
-
+        
+                <!-- Father and Mother Information -->
                 <div class="mb-4 grid grid-cols-2 gap-4">
                     <div class="mt-1 border-gray-200 py-2">
-                        <label for="fathername" class="block text-sm font-medium text-gray-700">Father Name *</label>
-                        <input type="text" id="fathername"
-                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <label for="fathername1" class="block text-sm font-medium text-gray-700">Father Name *</label>
+                        <input type="text" id="fathername1" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                     </div>
                     <div class="mt-1 border-gray-200 py-2">
-                        <label for="fathername" class="block text-sm font-medium text-gray-700">Father Name *</label>
-                        <input type="text" id="fathername"
-                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <label for="fathername2" class="block text-sm font-medium text-gray-700">Father Name *</label>
+                        <input type="text" id="fathername2" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                     </div>
                 </div>
-
+        
                 <div class="mb-4 grid grid-cols-2 gap-4">
                     <div class="mt-1 border-gray-200 py-2">
-                        <label for="mothername" class="block text-sm font-medium text-gray-700">Mother Name *</label>
-                        <input type="text" id="mothername"
-                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <label for="mothername1" class="block text-sm font-medium text-gray-700">Mother Name *</label>
+                        <input type="text" id="mothername1" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                     </div>
                     <div class="mt-1 border-gray-200 py-2">
-                        <label for="mothername" class="block text-sm font-medium text-gray-700">Mother Name *</label>
-                        <input type="text" id="mothername"
-                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <label for="mothername2" class="block text-sm font-medium text-gray-700">Mother Name *</label>
+                        <input type="text" id="mothername2" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                     </div>
                 </div>
-
             </div>
-
+        
             <div>
                 <div class="mb-4">
-                    <i class="ri-map-pin-user-line bg-[#B03A37] text-[#D9D9D9] mr-2 text-[25px] font-bold p-2
-                        outline-none border border-gray-300 rounded-full"></i>
+                    <i class="ri-map-pin-user-line bg-[#B03A37] text-[#D9D9D9] mr-2 text-[25px] font-bold p-2 outline-none border border-gray-300 rounded-full"></i>
                     <label class="font-medium text-[#B03A37] text-[20px]">Nominee Information</label>
                 </div>
-
-                <div class="mb-4 grid grid-cols-1 gap-4">
-                    <div class="mb-4 grid grid-cols-2 gap-4">
-                        <div class="mt-1 border-gray-200 py-2">
-                            <label for="State" class="block text-sm font-medium text-gray-700">Nominee Name *</label>
-                            <input type="text" id="mothername"
-                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                        </div>
-                        <div class="mt-1 border-gray-200 py-2">
-                            <label for="State" class="block text-sm font-medium text-gray-700">Nominee Name *</label>
-                            <input type="text" id="mothername"
-                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                        </div>
+        
+                <div class="mb-4 grid grid-cols-2 gap-4">
+                    <div class="mt-1 border-gray-200 py-2">
+                        <label for="nominee_name1" class="block text-sm font-medium text-gray-700">Nominee Name *</label>
+                        <input type="text" id="nominee_name1" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                     </div>
-                    <div class="mb-4 grid grid-cols-2 gap-4">
-                        <div class="mt-1 border-gray-200 py-2">
-                            <label for="State" class="block text-sm font-medium text-gray-700">Nominee DOB *</label>
-                            <input type="date" id="mothername"
-                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                        </div>
-                        <div class="mt-1 border-gray-200 py-2">
-                            <label for="State" class="block text-sm font-medium text-gray-700">Nominee Relation
-                                *</label>
-                            <input type="text" id="mothername"
-                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                        </div>
+                    <div class="mt-1 border-gray-200 py-2">
+                        <label for="nominee_contact" class="block text-sm font-medium text-gray-700">Nominee Contect No *</label>
+                        <input type="text" id="nominee_contact" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                    </div>
+                </div>
+        
+                <div class="mb-4 grid grid-cols-2 gap-4">
+                    <div class="mt-1 border-gray-200 py-2">
+                        <label for="nominee_dob" class="block text-sm font-medium text-gray-700">Nominee DOB *</label>
+                        <input type="date" id="nominee_dob" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                    </div>
+                    <div class="mt-1 border-gray-200 py-2">
+                        <label for="nominee_relation" class="block text-sm font-medium text-gray-700">Nominee Relation *</label>
+                        <input type="text" id="nominee_relation" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                     </div>
                 </div>
             </div>
-
+        
             <div>
                 <div class="mb-4">
-                    <i class="ri-map-pin-user-line bg-[#B03A37] text-[#D9D9D9] mr-2 text-[25px] font-bold p-2
-                        outline-none border border-gray-300 rounded-full"></i>
+                    <i class="ri-map-pin-user-line bg-[#B03A37] text-[#D9D9D9] mr-2 text-[25px] font-bold p-2 outline-none border border-gray-300 rounded-full"></i>
                     <label class="font-medium text-[#B03A37] text-[20px]">Address Information</label>
                 </div>
-
+        
                 <div class="mb-4 grid grid-cols-1 gap-4">
                     <div class="mt-1 border-gray-200 py-2">
-                        <label for="State" class="block text-sm font-medium text-gray-700">Select State *</label>
-                        <select id="State" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <label for="state" class="block text-sm font-medium text-gray-700">Select State *</label>
+                        <select id="state" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                             <option>Select State</option>
                         </select>
                     </div>
+        
                     <div class="mb-4 grid grid-cols-2 gap-4">
                         <div class="mt-1 border-gray-200 py-2">
-                            <label for="State" class="block text-sm font-medium text-gray-700">First line *</label>
-                            <input type="text" id="mothername"
-                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                            <label for="first_line1" class="block text-sm font-medium text-gray-700">First Line *</label>
+                            <input type="text" id="first_line1" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                         </div>
                         <div class="mt-1 border-gray-200 py-2">
-                            <label for="State" class="block text-sm font-medium text-gray-700">Second line <label>
-                                    <input type="text" id="mothername"
-                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                        </div>
-                    </div>
-                    <div class="mb-4 grid grid-cols-2 gap-4">
-                        <div class="mt-1 border-gray-200 py-2">
-                            <label for="State" class="block text-sm font-medium text-gray-700">City *</label>
-                            <input type="text" id="mothername"
-                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                        </div>
-                        <div class="mt-1 border-gray-200 py-2">
-                            <label for="State" class="block text-sm font-medium text-gray-700">Pincode * <label>
-                                    <input type="text" id="mothername"
-                                        class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                            <label for="pincode1" class="block text-sm font-medium text-gray-700">Pincode *</label>
+                            <input type="text" id="pincode1" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="mb-4">
-
-                <div class="mb-4">
-                    <i
-                        class="ri-article-line bg-[#B03A37] text-[#D9D9D9]   mr-2 text-[25px] font-bold p-2 outline-none border border-gray-300 rounded-full"></i>
-                    <label class="font-medium text-[#B03A37] text-[20px]">Documents</label>
-                </div>
-
-                <div class="mb-4">
-                    <label for="document" class="block text-sm font-medium text-gray-700">Select document *</label>
-                    <select id="document" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                        <option>Select Document</option>
-                        <option value="pan"> PAN Card </option>
-                        <option value="aadhaar"> Aadhaar Card </option>
-                        <option value="passport"> Passport </option>
-                        <option value="voterid"> Voter ID </option>
-                        <option value="drivinglicence"> Driving Licence </option>
-                    </select>
-                </div>
-
-
-                <div class="mb-4 grid grid-cols-2 gap-4">
-                    <div class="mt-1 border-gray-200 py-2">
-                        <label for="doc_num" class="block text-sm font-medium text-gray-700">Document Number
-                            *</label>
-                        <input type="text" id="doc_num" placeholder="Enter Your Select Document Number"
-                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                    </div>
-                    <div class="mt-1 border-gray-200 py-2">
-                        <label for="doc_num" class="block text-sm font-medium text-gray-700">Document Number
-                            *</label>
-                        <input type="text" id="doc_num" placeholder="Enter Your Select Document Number"
-                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                    </div>
-                </div>
-                <div class="mb-4 grid grid-cols-2 gap-4">
-                    <div class="mt-1 border-gray-200 py-2">
-                        <label for="doc_num" class="block text-sm font-medium text-gray-700">Upload Document (PDF only)
-                            *</label>
-                        <input type="file" id="doc_num"
-                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded" accept="application/pdf" >
-                    </div>
-                    <div class="mt-1 border-gray-200 py-2">
-                        <label for="doc_num" class="block text-sm font-medium text-gray-700">Upload Photograph (PNG only)
-                            *</label>
-                        <input type="file" id="doc_num"
-                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded" accept=".png" >
-                    </div>
-                </div>
-            </div>
-
         </div>
+        
 
         <div class="w-[90%]">
+            <!-- Contact Information Header -->
             <div class="mb-4">
-                <i
-                    class="ri-cellphone-line bg-[#B03A37] text-[#D9D9D9]   mr-2 text-[25px] font-bold p-2 outline-none border border-gray-300 rounded-full"></i>
+                <i class="ri-cellphone-line bg-[#B03A37] text-[#D9D9D9] mr-2 text-[25px] font-bold p-2 outline-none border border-gray-300 rounded-full"></i>
                 <label class="font-medium text-[#B03A37] text-[20px]">Contact Information</label>
             </div>
-
+        
+            <!-- Email Address Section -->
             <div class="mb-4 flex items-center gap-4">
                 <div class="mt-1 border-gray-200 py-2 w-[50%]">
                     <label for="email" class="text-sm font-medium text-gray-700">Email Address *</label>
                     <input type="email" id="email" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                    <div id="emailError" class="text-red-500 text-[13px]"></div>
                 </div>
-                <div class="mt-1 border-gray-200 py-2">
-                    <label for="email" class="text-sm font-medium text-gray-700">Enter OTP *</label>
+                <div class="mt-1 border-gray-200 py-2 w-[50%]">
+                    <label for="emailOtp" class="text-sm font-medium text-gray-700">Enter OTP *</label>
                     <div class="grid grid-cols-2 gap-4">
-
-                        <button class="w-full bg-[#B03A37] text-white px-6 py-3 rounded-full "><i
-                                class="ri-mail-send-line"></i> Send OTP</button>
-                        <input type="text" id="OTP" placeholder="Enter OTP"
-                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <button onclick="sendOtp(event)" id="sendMailOtp"  class="w-full bg-[#B03A37] text-white px-6 py-3 rounded-full">
+                            <i class="ri-mail-send-line"></i> Send OTP
+                        </button>
+                        <input type="text" id="emailOtp" placeholder="Enter OTP" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <div id="message" class="text-red-500 text-[13px]"></div>
                     </div>
                 </div>
             </div>
-
+        
+            <!-- Mobile Number Section -->
             <div class="mb-4 flex items-center gap-4">
                 <div class="mt-1 border-gray-200 py-2 w-[50%]">
                     <label for="mobile" class="block text-sm font-medium text-gray-700">Mobile Number *</label>
                     <input type="tel" id="mobile" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                    <div id="mobileError" class="text-red-500 text-[13px]"></div>
                 </div>
-                <div class="mt-1 border-gray-200 py-2">
-                    <label for="email" class="text-sm font-medium text-gray-700">Enter OTP *</label>
+                <div class="mt-1 border-gray-200 py-2 w-[50%]">
+                    <label for="mobileOtp" class="text-sm font-medium text-gray-700">Enter OTP *</label>
                     <div class="grid grid-cols-2 gap-4">
-
-                        <button class="w-full bg-[#B03A37] text-white px-6 py-3 rounded-full "><i
-                                class="ri-phone-line"></i>
-                            Send OTP</button>
-                        <input type="text" id="OTP" placeholder="Enter OTP"
-                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <button onclick="sendMobileOtp(event)" id="sendMobileOtp" class="w-full bg-[#B03A37] text-white px-6 py-3 rounded-full">
+                            <i class="ri-phone-line"></i> Send OTP
+                        </button>
+                        <input type="text" id="mobileOtp" placeholder="Enter OTP" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <div id="OTPmessage" class="text-red-500 text-[13px]"></div>
                     </div>
                 </div>
             </div>
         </div>
+        
         <div>
+            <!-- Password Section -->
             <div class="mb-4">
                 <div class="mb-4 grid grid-cols-2 gap-4">
+                    <!-- Create Password -->
                     <div class="mt-1 border-gray-200 py-2">
-                        <label for="password" class="block text-sm font-medium text-gray-700">Create Your
-                            Password</label>
-                        <input type="password" id="password" placeholder="Password"
+                        <label for="create-password" class="block text-sm font-medium text-gray-700">Create Your Password *</label>
+                        <input type="password" id="create-password" placeholder="Create Password"
                             class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                     </div>
+                    <!-- Confirm Password -->
                     <div class="mt-1 border-gray-200 py-2">
-                        <label for="password" class="block text-sm font-medium text-gray-700">Create Your
-                            Password</label>
-                        <input type="password" id="password" placeholder="Password"
+                        <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm Your Password *</label>
+                        <input type="password" id="confirm-password" placeholder="Confirm Password"
                             class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                     </div>
                 </div>
+        
+                <!-- Captcha and Submit Section -->
                 <div class="mb-4 gap-4">
                     <div class="mt-1 items-center border-gray-200 py-2 flex gap-5">
+                        <!-- Captcha Input and Captcha Display -->
                         <div class="w-[60%] flex gap-5">
+                            <!-- Captcha Input -->
                             <div class="w-full">
-                                <label for="captcha" class="block text-sm font-medium text-gray-700">Enter Captcha Code
-                                    *</label>
-                                <input type="text" id="captcha"
+                                <label for="captcha-input" class="block text-sm font-medium text-gray-700">Enter Captcha Code *</label>
+                                <input type="text" id="captcha-input"
                                     class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                             </div>
-                            <input type="text" id="captcha"
+                            <!-- Captcha Display -->
+                            <input type="text" id="captcha-display"
                                 class="w-full mt-1 p-2 outline-none border border-gray-300 rounded text-red-600 text-center font-semibold text-[25px]"
                                 value="Captcha" readonly>
                         </div>
-                        <div class=" w-[40%] flex justify-end mt-4">
-                            <button class="px-4 py-2  bg-[#B03A37] text-white rounded hover:bg-[#B4ADA7]">Preview and
-                                Create An
-                                Account</button>
+                        <!-- Submit Button -->
+                        <div class="w-[40%] flex justify-end mt-4">
+                            <button class="px-4 py-2 bg-[#B03A37] text-white rounded hover:bg-[#B4ADA7]">
+                                Preview and Create An Account
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
     </div>
 
 
     <script src=" {{ url_for('static', filename='Js/Country.js') }}"></script>
-    <script src="{{ url_for('static', filename='Js//state.js') }}"></script>
+    <script src="{{ url_for('static', filename='Js/state.js') }}"></script>
+    <script src="{{ url_for('static', filename='Js/Email_OTP.js') }}"></script>
+    <script src="{{ url_for('static', filename='Js/mobile_OTP.js') }}"></script>
 
 </body>
 
