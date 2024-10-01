@@ -16,3 +16,4 @@ def Login():
 def Account_open():
     page="Account_open"
     return render_template('Home/Account_open.html', page=page)
+

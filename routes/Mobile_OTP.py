@@ -77,4 +77,4 @@ if __name__ == '__main__':
     from flask import Flask
     app = Flask(__name__)
     app.register_blueprint(OTP_Mobile)
-    app.run(debug=True, port=3000)
+    app.run(debug=True)

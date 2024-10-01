@@ -2,6 +2,7 @@ from flask import Blueprint, render_template
 
 from backend.getData import fetch_all_data
 
+
 admin = Blueprint('admin', __name__)
 
 

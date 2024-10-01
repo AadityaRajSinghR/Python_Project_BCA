@@ -5,6 +5,7 @@ const inputPairs = [
     ['gender1', 'gender2'],
     ['fathername1', 'fathername2'],
     ['mothername1', 'mothername2'],
+    ['doc_num1', 'doc_num2'],
 ];
 
 // Function to check if two input values match
@@ -91,16 +92,24 @@ confirmPasswordInput.addEventListener('input', checkPassword);
 
 
 const allfield = [
+    'country', 'occupation', 
+    'document', 'doc_file', 'Photo', 
     'nominee_name1', 'nominee_contact',
     'nominee_relation', 'nominee_dob',
     'state', 'first_line1',
-    'pincode1', 'email', 'mobile'
+    'pincode1'
 ]
 
 allfield.forEach(field => {
-    document.getElementById(field).addEventListener('input', () => {
+    document.getElementById(field).addEventListener('blur', () => {
         // document.getElementById(field).required=true;
-        document.getElementById(field).classList.add('is-valid');
+        if (document.getElementById(field).value === "") {
+            document.getElementById(field).classList.add('is-invalid');
+            document.getElementById(field).classList.remove('is-valid');
+        } else {
+            document.getElementById(field).classList.add('is-valid');
+            document.getElementById(field).classList.remove('is-invalid');
+        }
     })
 })
 

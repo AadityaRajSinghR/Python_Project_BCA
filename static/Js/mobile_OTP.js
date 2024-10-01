@@ -1,4 +1,4 @@
-const OTP_TIME_LIMIT = 10; // Timer starts from 10 seconds
+const OTP_TIME_LIMIT = 300; // Timer starts from 10 seconds
 let OTPtimeLeft = OTP_TIME_LIMIT; 
 let OTPtimerId;
 
@@ -141,4 +141,5 @@ function disableAllInputs() {
     document.getElementById('mobile').style.backgroundColor = '#00000024';
     document.getElementById('mobile').readOnly = true;
     document.getElementById('mobile').disabled = true;
+    document.getElementById('mobile').classList.add('is-valid');
 }

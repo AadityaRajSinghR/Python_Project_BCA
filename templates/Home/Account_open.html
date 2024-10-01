@@ -66,7 +66,7 @@
                         <label for="country" class="block text-sm font-medium text-gray-700">Country Of Nationality
                             *</label>
                         <select id="country" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                            <option>Select Country</option>
+                            <option value="">Select Country</option>
                         </select>
                     </div>
                     <!-- Enter Occupation -->
@@ -74,7 +74,7 @@
                         <label for="occupation" class="block text-sm font-medium text-gray-700">Enter Occupation
                             *</label>
                         <input type="text" id="occupation"
-                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded" >
+                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                     </div>
                 </div>
 
@@ -114,7 +114,7 @@
                     <div class="mt-1 border-gray-200 py-2">
                         <label for="gender1" class="block text-sm font-medium text-gray-700">Select Gender *</label>
                         <select id="gender1" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                            <option value="Y">Select Gender</option>
+                            <option value="">Select Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="other">Other</option>
@@ -123,7 +123,7 @@
                     <div class="mt-1 border-gray-200 py-2">
                         <label for="gender2" class="block text-sm font-medium text-gray-700">Select Gender *</label>
                         <select id="gender2" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                            <option value="N">Select Gender</option>
+                            <option value="">Select Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="other">Other</option>
@@ -159,6 +159,58 @@
                 </div>
             </div>
 
+            <div class="mb-4">
+
+                <div class="mb-4">
+                    <i
+                        class="ri-article-line bg-[#B03A37] text-[#D9D9D9]   mr-2 text-[25px] font-bold p-2 outline-none border border-gray-300 rounded-full"></i>
+                    <label class="font-medium text-[#B03A37] text-[20px]">Documents</label>
+                </div>
+
+                <div class="mb-4">
+                    <label for="document" class="block text-sm font-medium text-gray-700">Select document *</label>
+                    <select id="document" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        <option value="">Select Document</option>
+                        <option value="pan"> PAN Card </option>
+                        <option value="aadhaar"> Aadhaar Card </option>
+                        <option value="passport"> Passport </option>
+                        <option value="voterid"> Voter ID </option>
+                        <option value="drivinglicence"> Driving Licence </option>
+                    </select>
+                </div>
+
+
+                <div class="mb-4 grid grid-cols-2 gap-4">
+                    <div class="mt-1 border-gray-200 py-2">
+                        <label for="doc_num1" class="block text-sm font-medium text-gray-700">Document Number
+                            *</label>
+                        <input type="text" id="doc_num1" placeholder="Enter Your Select Document Number"
+                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                    </div>
+                    <div class="mt-1 border-gray-200 py-2">
+                        <label for="doc_num2" class="block text-sm font-medium text-gray-700">Re Document Number
+                            *</label>
+                        <input type="text" id="doc_num2" placeholder="Enter Your Select Document Number"
+                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                    </div>
+                </div>
+                <div class="mb-4 grid grid-cols-2 gap-4">
+                    <div class="mt-1 border-gray-200 py-2">
+                        <label for="doc_file" class="block text-sm font-medium text-gray-700">Upload Document (PDF only)
+                            *</label>
+                        <input type="file" id="doc_file"
+                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded"
+                            accept="application/pdf">
+                    </div>
+                    <div class="mt-1 border-gray-200 py-2">
+                        <label for="Photo" class="block text-sm font-medium text-gray-700">Upload Photograph (PNG
+                            only)
+                            *</label>
+                        <input type="file" id="Photo"
+                            class="w-full mt-1 p-2 outline-none border border-gray-300 rounded" accept=".png">
+                    </div>
+                </div>
+            </div>
             <div>
                 <div class="mb-4">
                     <i
@@ -207,7 +259,7 @@
                     <div class="mt-1 border-gray-200 py-2">
                         <label for="state" class="block text-sm font-medium text-gray-700">Select State *</label>
                         <select id="state" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                            <option>Select State</option>
+                            <option value="">Select State</option>
                         </select>
                     </div>
 
@@ -319,8 +371,9 @@
                         </div>
                         <!-- Submit Button -->
                         <div class="w-[40%] flex justify-end mt-4">
-                            <button class="px-4 py-2 bg-[#B03A37] text-white rounded hover:bg-[#B4ADA7]">
-                                Preview and Create An Account
+                            <button id="insertData"
+                                class="px-4 py-2 bg-[#B03A37] text-white rounded hover:bg-[#B4ADA7]">
+                                Create An Account
                             </button>
                         </div>
                     </div>
@@ -336,6 +389,7 @@
     <script src="{{ url_for('static', filename='Js/Email_OTP.js') }}"></script>
     <script src="{{ url_for('static', filename='Js/mobile_OTP.js') }}"></script>
     <script src="{{ url_for('static', filename='Js/validate_field.js') }}"></script>
+    <script src="{{ url_for('static', filename='Js/insertData.js') }}"></script>
 
 </body>
 

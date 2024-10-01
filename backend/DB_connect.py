@@ -14,5 +14,5 @@ if not DB_PASS:
 def connect_db():
     # MongoDB connection string (replace with your own)
     client = MongoClient(f'mongodb+srv://Python_Mongo:{DB_PASS}@pythonproject.mc1qw.mongodb.net/')
-    db = client['mydatabase']  # Replace with your DB name
+    db = client['User']  # Replace with your DB name
     return db
