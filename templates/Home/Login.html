@@ -57,9 +57,9 @@
 
                 <!-- Form Fields -->
                 <form class="space-y-4">
-                    <input type="text" placeholder="Username"
+                    <input id="username" type="text" placeholder="Username"
                         class="w-full p-3 rounded-full bg-white text-black focus:outline-none">
-                    <input type="password" placeholder="Password"
+                    <input id="password" type="password" placeholder="Password"
                         class="w-full p-3 rounded-full bg-white text-black focus:outline-none">
 
                     <div class="flex justify-between items-center text-sm text-[#E4ADA7] mt-1">
@@ -69,11 +69,11 @@
                         </div>
                         <a href="#" class="text-[#5B5B5B]">Forgot Your Password?</a>
                     </div>
-                    <a href="/Dashboard">
 
-                        <button type="button"
-                            class="w-full bg-gray-500 text-white p-3 rounded-full font-semibold mt-4">Login</button>
-                    </a>
+
+                    <button id="login" type="button"
+                        class="w-full bg-gray-500 text-white p-3 rounded-full font-semibold mt-4">Login</button>
+
                 </form>
 
                 <!-- Divider -->
@@ -144,5 +144,7 @@
         };
     </script>
 </body>
+
+<script src="{{ url_for('static', filename='js/login.js') }}" ></script>
 
 </html>

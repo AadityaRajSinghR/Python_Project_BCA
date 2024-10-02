@@ -49,6 +49,7 @@ insertData.addEventListener("click", () => {
     data['account_no'] = genrate_Account_no_fun();
     data['Open_date'] = current_date;
     data['Open_time'] = current_time;
+    data['is_active'] = false;
 
     allFields.forEach(fieldName => {
         const field = document.getElementById(fieldName);

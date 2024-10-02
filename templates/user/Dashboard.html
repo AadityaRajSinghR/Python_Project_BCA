@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="flex h-screen">
+
+        <!-- Include the sidebar in the layout -->
+        {% include 'user/sidebar.html' %}
+
+        <!-- Main Content -->
+        <div class="flex-1 ml-[20%] w-[80%] p-6">
+            <!-- Dashboard Header -->
+            <div class="flex items-center justify-between bg-[#D65B5B] p-4 rounded-t-lg">
+                <div class="flex items-center text-white">
+                    <i class="ri-admin-line text-2xl mr-2 "></i>
+                    <h2 class="text-xl font-semibold"> My Account</h2>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="bg-white text-[#D65B5B] p-2 rounded-full">
+                        <div class="w-6 h-6">
+                            <i class="ri-notification-line"></i>
+                        </div>
+                    </button>
+                    <button class="bg-white text-[#D65B5B] p-2 rounded-full">
+                        <div class="w-6 h-6">
+
+                            <i class="ri-logout-circle-r-line"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-gray-200 p-4 rounded-b-lg mt-4">
+                <div class="greeding text-[#D65B5B] mb-4 font-semibold text-xl">
+                    <span id="time"></span>
+                    <span>, Devraj</span>
+                    <p>Welcome Back</p>
+                </div>
+            </div>
+
+            <!-- Display User Details -->
+            <div class="bg-white p-6 rounded-lg max-w-4xl mx-auto mt-10 shadow-lg">
+
+                <!-- Information Section -->
+                <div class="text-center">
+                    <h1 class="text-4xl font-semibold text-gray-700">User Information</h1>
+                    <p class="text-gray-500 mt-2">Account Details & Personal Information</p>
+                </div>
+
+                <!-- Table Section -->
+                <div class="p-6 flex justify-between gap-4 bg-white rounded-lg mt-8 shadow-md">
+
+                    <!-- User Details Table -->
+                    <div class="w-[70%]">
+                        <table class="table-auto w-full border-collapse border border-gray-200">
+                            <tbody class="bg-gray-50 divide-y divide-gray-200">
+
+                                <!-- Row 1 -->
+                                <tr class="bg-white">
+                                    <td class="py-3 px-4 font-semibold text-gray-700">Customer ID</td>
+                                    <td class="py-3 px-4">:</td>
+                                    <td class="py-3 px-4 text-gray-900">{{ user.email }}</td>
+                                </tr>
+
+                                <!-- Row 2 -->
+                                <tr>
+                                    <td class="py-3 px-4 font-semibold text-gray-700">Full Name</td>
+                                    <td class="py-3 px-4">:</td>
+                                    <td class="py-3 px-4 text-gray-900">Aaditya Raj Singh</td>
+                                </tr>
+
+                                <!-- Row 3 -->
+                                <tr class="bg-white">
+                                    <td class="py-3 px-4 font-semibold text-gray-700">Date of Birth</td>
+                                    <td class="py-3 px-4">:</td>
+                                    <td class="py-3 px-4 text-gray-900">October 20, 2005</td>
+                                </tr>
+
+                                <!-- Row 4 -->
+                                <tr>
+                                    <td class="py-3 px-4 font-semibold text-gray-700">Gender</td>
+                                    <td class="py-3 px-4">:</td>
+                                    <td class="py-3 px-4 text-gray-900">Male</td>
+                                </tr>
+
+                                <!-- Row 5 -->
+                                <tr class="bg-white">
+                                    <td class="py-3 px-4 font-semibold text-gray-700">Occupation</td>
+                                    <td class="py-3 px-4">:</td>
+                                    <td class="py-3 px-4 text-gray-900">Student</td>
+                                </tr>
+
+                                <!-- Row 6 -->
+                                <tr>
+                                    <td class="py-3 px-4 font-semibold text-gray-700">Nominee</td>
+                                    <td class="py-3 px-4">:</td>
+                                    <td class="py-3 px-4 text-gray-900">Dilip Singh (Father)</td>
+                                </tr>
+
+                                <!-- Row 7 -->
+                                <tr class="bg-white">
+                                    <td class="py-3 px-4 font-semibold text-gray-700">Nominee Contact</td>
+                                    <td class="py-3 px-4">:</td>
+                                    <td class="py-3 px-4 text-gray-900">1234567890</td>
+                                </tr>
+
+                                <!-- Row 8 -->
+                                <tr>
+                                    <td class="py-3 px-4 font-semibold text-gray-700">Country</td>
+                                    <td class="py-3 px-4">:</td>
+                                    <td class="py-3 px-4 text-gray-900">India</td>
+                                </tr>
+
+                                <!-- Row 9 -->
+                                <tr class="bg-white">
+                                    <td class="py-3 px-4 font-semibold text-gray-700">State</td>
+                                    <td class="py-3 px-4">:</td>
+                                    <td class="py-3 px-4 text-gray-900">Madhya Pradesh</td>
+                                </tr>
+
+                                <!-- Row 10 -->
+                                <tr>
+                                    <td class="py-3 px-4 font-semibold text-gray-700">City</td>
+                                    <td class="py-3 px-4">:</td>
+                                    <td class="py-3 px-4 text-gray-900">Ujjain</td>
+                                </tr>
+
+                                <!-- Row 11 -->
+                                <tr class="bg-white">
+                                    <td class="py-3 px-4 font-semibold text-gray-700">Pincode</td>
+                                    <td class="py-3 px-4">:</td>
+                                    <td class="py-3 px-4 text-gray-900">456001</td>
+                                </tr>
+
+                                <!-- Row 12 -->
+                                <tr>
+                                    <td class="py-3 px-4 font-semibold text-gray-700">Email</td>
+                                    <td class="py-3 px-4">:</td>
+                                    <td class="py-3 px-4 text-gray-900">aaditya.singh@avantika.edu.in</td>
+                                </tr>
+
+                                <!-- Row 13 -->
+                                <tr class="bg-white">
+                                    <td class="py-3 px-4 font-semibold text-gray-700">Document Type</td>
+                                    <td class="py-3 px-4">:</td>
+                                    <td class="py-3 px-4 text-gray-900">PAN</td>
+                                </tr>
+
+                                <!-- Row 14 -->
+                                <tr>
+                                    <td class="py-3 px-4 font-semibold text-gray-700">Document Number</td>
+                                    <td class="py-3 px-4">:</td>
+                                    <td class="py-3 px-4 text-gray-900">AUBA1234E</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Image Section -->
+                    <div class="w-[30%] flex flex-col items-center">
+                        <img src="https://via.placeholder.com/300x400" alt="Profile Picture"
+                            class="rounded-lg shadow-md w-full h-auto">
+                        <p class="text-center text-gray-700 mt-4">Profile Picture</p>
+                        <a href="C:/fakepath/cast__.pdf" class="block text-blue-500 text-center mt-2">View Document</a>
+                    </div>
+                </div>
+                <button class="mt-10 bg-gray-800 text-white px-6 py-3 rounded-full">Edit Data</button>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+    <script>
+        // greeting message
+        const currentTime = new Date(); // Make sure to get the current time
+        const hours = currentTime.getHours();
+
+        if (hours < 12) {
+            document.getElementById('time').innerHTML = 'Good Morning';
+        } else if (hours >= 12 && hours < 18) { // Check if hours are between 12 and 18 for Afternoon
+            document.getElementById('time').innerHTML = 'Good Afternoon';
+        } else {
+            document.getElementById('time').innerHTML = 'Good Evening'; // Evening is now the last condition
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<style>
+    ::-webkit-scrollbar {
+        display: none;
+    }
+</style>
+
+<!-- Sidebar -->
+<div class="w-[20%] bg-[#D65B5B] text-white flex justify-start fixed flex-col h-screen ">
+
+    <div class="p-10">
+        <!-- Logo -->
+        <div class="w-full flex justify-start">
+            <a href="#">
+                <div class="flex justify-center items-center mb-10">
+                    <img src="{{url_for('static', filename='svg/logo.svg')}}" alt="">
+                    <div class="ml-4 flex flex-col items-start">
+                        <h1 class="text-white-600 ">AU Bank</h1>
+                        <p class="text-xs text-white-600">Avanika Trust & Savings</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Menu -->
+        <ul class="space-y-4">
+            <li>
+                <a href="/user_dashboard">
+
+                    <button class="flex items-center w-full 
+                {% if page == 'Dashboard' %} text-gray-100 bg-gray-600 
+                {% else %} bg-gray-100 text-gray-600 
+                {% endif %} 
+                text-left rounded-lg py-2 px-5 gap-2">
+                        <i class="ri-dashboard-horizontal-line mr-2"></i>
+                        <span>My Account</span>
+                    </button>
+                </a>
+
+            </li>
+            <li>
+                <a href="/user/Account_statement">
+                    <button class="flex items-center w-full 
+                {% if page == 'Account_statement' %} text-gray-100 bg-gray-600 
+                {% else %} bg-gray-100 text-gray-600 
+                {% endif %} 
+                text-left rounded-lg py-2 px-5 gap-2">
+                        <i class="ri-history-line mr-2"></i>
+                        <span>Transecton History</span>
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="/user/Loan_Apply">
+                    <button class="flex items-center w-full 
+                {% if page == 'Loan_Apply' %} text-gray-100 bg-gray-600 
+                {% else %} bg-gray-100 text-gray-600 
+                {% endif %} 
+                text-left rounded-lg py-2 px-5 gap-2"><i class="ri-hand-coin-line mr-2"></i>
+                        <span>Apply Loan</span>
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="/user/Online_Banking">
+                    <button class="flex items-center w-full 
+                {% if page == 'Online_Banking' %} text-gray-100 bg-gray-600 
+                {% else %} bg-gray-100 text-gray-600 
+                {% endif %} 
+                text-left rounded-lg py-2 px-5 gap-2">
+                        <i class="ri-p2p-line mr-2"></i>
+                        <span>Online Banking</span>
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="/user/EMI_Calculator">
+                    <button class="flex items-center w-full 
+                {% if page == 'EMI_Calculator' %} text-gray-100 bg-gray-600 
+                {% else %} bg-gray-100 text-gray-600 
+                {% endif %} 
+                text-left rounded-lg py-2 px-5 gap-2">
+                        <i class="ri-calculator-line mr-2"></i>
+                        <span>Calculate EMI</span>
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>

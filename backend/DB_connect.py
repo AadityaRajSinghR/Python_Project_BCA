@@ -11,8 +11,9 @@ DB_PASS = os.getenv('DB_PASS')
 if not DB_PASS:
     raise ValueError("Environment variable DB_PASS not set.")
 
+client = MongoClient(f'mongodb+srv://Python_Mongo:{DB_PASS}@pythonproject.mc1qw.mongodb.net/')
+
 def connect_db():
     # MongoDB connection string (replace with your own)
-    client = MongoClient(f'mongodb+srv://Python_Mongo:{DB_PASS}@pythonproject.mc1qw.mongodb.net/')
     db = client['User']  # Replace with your DB name
     return db
