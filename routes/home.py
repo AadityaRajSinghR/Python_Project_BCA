@@ -10,14 +10,19 @@ def index():
 
 @home.route('/Login')
 def Login():
-    user = session.get('user', None ) or session.get('email', None)
-    admin = session.get('user', None ) or session.get('email', None) or session.get('is_admin', None)  # Retrieve user data from the session
-    if user:
-        return redirect(url_for('user.user_dashboard_page'))
-    elif admin:
-        return redirect(url_for('admin.Dashboard'))
+    # Retrieve user data from the session
+    user = session.get('user')
+    email = session.get('email')
+    is_admin = session.get('is_admin')
+
+    if user and email:  # Check if the user and email are present
+        if is_admin:  # If the user is also an admin
+            return redirect(url_for('admin.Dashboard'))
+        else:
+            return redirect(url_for('user.user_dashboard_page'))
     else:
         return render_template('Home/Login.html')
+
 
 @home.route('/Account_open')
 def Account_open():

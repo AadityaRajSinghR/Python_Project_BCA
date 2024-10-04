@@ -94,7 +94,7 @@
 
         <!-- Right section (empty placeholder) -->
         <div class="w-[40%] bg-gray-300 flex justify-center items-center">
-            <div class="w-[300px] h-[300px] bg-gray-400"></div>
+            <img src=" {{url_for('static', filename='img/lock.png')}}" alt="">
         </div>
     </div>
 
@@ -143,8 +143,9 @@
             requestAnimationFrame(updateFrame);
         };
     </script>
+
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
 </body>
 
-<script src="{{ url_for('static', filename='js/login.js') }}" ></script>
 
 </html>

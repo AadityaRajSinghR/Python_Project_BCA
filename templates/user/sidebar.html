@@ -38,9 +38,9 @@
 
             </li>
             <li>
-                <a href="/user/Account_statement">
+                <a href="/transaction_history">
                     <button class="flex items-center w-full 
-                {% if page == 'Account_statement' %} text-gray-100 bg-gray-600 
+                {% if page == 'Transaction_History' %} text-gray-100 bg-gray-600 
                 {% else %} bg-gray-100 text-gray-600 
                 {% endif %} 
                 text-left rounded-lg py-2 px-5 gap-2">
@@ -50,7 +50,7 @@
                 </a>
             </li>
             <li>
-                <a href="/user/Loan_Apply">
+                <a href="/user_Loan_Apply">
                     <button class="flex items-center w-full 
                 {% if page == 'Loan_Apply' %} text-gray-100 bg-gray-600 
                 {% else %} bg-gray-100 text-gray-600 
@@ -61,7 +61,7 @@
                 </a>
             </li>
             <li>
-                <a href="/user/Online_Banking">
+                <a href="/online_banking">
                     <button class="flex items-center w-full 
                 {% if page == 'Online_Banking' %} text-gray-100 bg-gray-600 
                 {% else %} bg-gray-100 text-gray-600 
@@ -73,7 +73,7 @@
                 </a>
             </li>
             <li>
-                <a href="/user/EMI_Calculator">
+                <a href="/user_EMI_Calculator">
                     <button class="flex items-center w-full 
                 {% if page == 'EMI_Calculator' %} text-gray-100 bg-gray-600 
                 {% else %} bg-gray-100 text-gray-600 
@@ -81,6 +81,17 @@
                 text-left rounded-lg py-2 px-5 gap-2">
                         <i class="ri-calculator-line mr-2"></i>
                         <span>Calculate EMI</span>
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="/logout">
+                    <button class="flex items-center w-full 
+                bg-gray-100 text-gray-600 
+                
+                text-left rounded-lg py-2 px-5 gap-2">
+                        <i class="ri-logout-circle-r-line mr-2"></i>
+                        <span>Logout</span>
                     </button>
                 </a>
             </li>

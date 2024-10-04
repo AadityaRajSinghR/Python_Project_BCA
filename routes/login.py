@@ -13,6 +13,7 @@ def user_login_route():
         if result:
             session['user'] = result  # Store user data in the session
             session['email'] = email  # Store email in the session
+            session['is_admin'] = False
             return jsonify({'message': 'Login successful!'})
         else:
             return jsonify({'message': 'Invalid email or password'})        

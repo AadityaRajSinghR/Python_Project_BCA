@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="flex h-screen">
+
+        <!-- Include the sidebar in the layout -->
+        {% include 'user/sidebar.html' %}
+
+        <!-- Main Content -->
+        <div class="flex-1 ml-[20%] w-[80%] p-6">
+            <!-- Dashboard Header -->
+            <div class="flex items-center justify-between bg-[#D65B5B] p-4 rounded-t-lg">
+                <div class="flex items-center text-white">
+                    <i class="ri-arrow-left-right-line mr-2 text-2xl"></i>
+                    <h2 class="text-xl font-semibold">Transaction History</h2>
+                </div>
+
+                <div class="flex space-x-4">
+                    <button class="bg-white text-[#D65B5B] p-2 rounded-full">
+                        <div class="w-6 h-6">
+                            <i class="ri-notification-line"></i>
+                        </div>
+                    </button>
+                    <button class="bg-white text-[#D65B5B] p-2 rounded-full">
+                        <div class="w-6 h-6">
+                            <a href="/logout">
+
+                                <i class="ri-logout-circle-r-line"></i>
+                            </a>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- User Table -->
+            <div class="bg-gray-200 p-4 rounded-b-lg mt-4">
+                <table class="w-full text-left bg-white rounded-lg shadow">
+                    <thead class="bg-gray-300">
+                        <tr>
+                            <th class="px-4 py-2">Date & Time</th>
+                            <th class="px-4 py-2">Sender Account</th>
+                            <th class="px-4 py-2">Sender Contact</th>
+                            <th class="px-4 py-2">Operation</th>
+                            <th class="px-4 py-2">Amount</th>
+                            <th class="px-4 py-2">Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class=" table__row">
+                            <td class="border px-4 py-2">10/10/2022 12:00</td>
+                            <td class="border px-4 py-2">897454561201451</td>
+                            <td class="border px-4 py-2">1234567890</td>
+                            <td class="border px-4 py-2">Deposit</td>
+                            <td class="border px-4 py-2">500</td>
+                            <td class="border px-4 py-2">10000</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr class=" table__row">
+                            <td class="border px-4 py-2">10/10/2022 12:00</td>
+                            <td class="border px-4 py-2">897454561201451</td>
+                            <td class="border px-4 py-2">9513578527</td>
+                            <td class="border px-4 py-2">Withdraw</td>
+                            <td class="border px-4 py-2">1000</td>
+                            <td class="border px-4 py-2">9000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        // greeting message
+        const currentTime = new Date(); // Make sure to get the current time
+        const hours = currentTime.getHours();
+
+        if (hours < 12) {
+            document.getElementById('time').innerHTML = 'Good Morning';
+        } else if (hours >= 12 && hours < 18) { // Check if hours are between 12 and 18 for Afternoon
+            document.getElementById('time').innerHTML = 'Good Afternoon';
+        } else {
+            document.getElementById('time').innerHTML = 'Good Evening'; // Evening is now the last condition
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

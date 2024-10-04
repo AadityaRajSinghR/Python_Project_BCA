@@ -34,7 +34,7 @@ insertData.addEventListener("click", () => {
         'country', 'occupation',
         'nominee_name1', 'nominee_contact',
         'nominee_relation', 'nominee_dob',
-        'state', 'first_line1',
+        'state', 'first_line1','district',
         'pincode1', 'email',
         'mobile', 'fullname1',
         'dob1', 'gender1',
@@ -50,7 +50,7 @@ insertData.addEventListener("click", () => {
     data['Open_date'] = current_date;
     data['Open_time'] = current_time;
     data['is_active'] = false;
-
+    data['account_balance'] = 0;
     allFields.forEach(fieldName => {
         const field = document.getElementById(fieldName);
         if (field) {
@@ -60,7 +60,7 @@ insertData.addEventListener("click", () => {
             if (field.classList.contains('is-valid')) {
                 const fieldValue = field.value;
                 console.log(fieldValue, ':', fieldName);
-                data[fieldName] = fieldValue;
+                data[fieldName] = fieldValue.toUpperCase();
                 verified++;
             }
         } else {

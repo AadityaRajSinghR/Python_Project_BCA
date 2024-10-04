@@ -97,7 +97,7 @@ const allfield = [
     'nominee_name1', 'nominee_contact',
     'nominee_relation', 'nominee_dob',
     'state', 'first_line1',
-    'pincode1'
+    'pincode1','district',
 ]
 
 allfield.forEach(field => {

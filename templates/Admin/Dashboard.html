@@ -7,6 +7,24 @@
     <title>User Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Modal backdrop styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            width: 80%;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-100">
@@ -47,26 +65,218 @@
                     <thead class="bg-gray-300">
                         <tr>
                             <th class="px-4 py-2">User Name</th>
-                            <th class="px-4 py-2">Request ID</th>
+                            <th class="px-4 py-2">Customer No</th>
+                            <th class="px-4 py-2">Account No</th>
                             <th class="px-4 py-2">E-mail</th>
                             <th class="px-4 py-2">Phone no</th>
                             <th class="px-4 py-2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {% for user in users %}
                         <tr class="table__row">
-                            <td class="border px-4 py-2">Devraj Dev</td>
-                            <td class="border px-4 py-2">12345678901234</td>
-                            <td class="border px-4 py-2">abc@gmail.com</td>
-                            <td class="border px-4 py-2">09876543211</td>
+                            <td class="border px-4 py-2">{{ user.fullname1 }}</td>
+                            <td class="border px-4 py-2">{{ user.Customer_id }}</td>
+                            <td class="border px-4 py-2">{{ user.account_no }}</td>
+                            <td class="border px-4 py-2">{{ user.email }}</td>
+                            <td class="border px-4 py-2">{{ user.mobile }}</td>
                             <td class="border px-4 py-2">
-                                <a href="#">
+                                <a onclick="openModal('modal{{ loop.index }}')" href="#">
 
                                     <i class="ri-eye-line text-[#D65B5B] text-xl cursor-pointer"></i>
                                 </a>
                             </td>
                         </tr>
 
+                        <!-- Modal -->
+                        <div class="modal fixed  bg-black bg-opacity-50  left-0 w-full h-full overflow-y-auto"
+                            id="modal{{ loop.index }}">
+                            <div class="w-[960px] h-max mx-auto border border-gray-300 bg-white p-6">
+                                <!-- Header Section -->
+                                <div
+                                    class="text-lg font-bold text-gray-700 border-b-2 border-gray-300 pb-2 mb-4 flex justify-between">
+                                    <div>
+                                        <span>
+                                            <i class="ri-user-3-line text-[#D65B5B] text-xl"></i>
+                                        </span>
+                                        Personal Details
+                                    </div>
+                                    <div>
+                                        <button onclick="closeModal('modal{{ loop.index }}')"> X </button>
+                                    </div>
+                                </div>
+
+                                <!-- Personal Details Section -->
+                                <div class="flex">
+                                    <!-- Details Column -->
+                                    <div class="flex-1 border-r border-gray-300 pr-4">
+                                        <div class="mb-4 flex  border p-2 border-gray-300 justify-between ">
+                                            <div class="font-bold w-1/2 border-r border-gray-300 ">Full Name of
+                                                Applicant :-
+                                            </div>
+                                            <div class=" p-2 w-1/2 border-r border-gray-300 ">{{ user['fullname1'] }}
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 flex  border p-2 border-gray-300 justify-between ">
+                                            <div class="font-bold w-1/2 border-r border-gray-300">Father's Name :-</div>
+                                            <div class=" p-2 w-1/2 border-r border-gray-300 ">{{ user['fathername1']}}
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 flex  border p-2 border-gray-300 justify-between ">
+                                            <div class="font-bold w-1/2 border-r border-gray-300 ">Mother's Name</div>
+                                            <div class=" p-2 w-1/2 border-r border-gray-300 ">{{ user['mothername1']}}
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 flex  border p-2 border-gray-300 justify-between ">
+                                            <div class="font-bold w-1/2 border-r border-gray-300 ">Date Of Birth</div>
+                                            <div class=" p-2 w-1/2 border-r border-gray-300 ">{{user['dob1']}}</div>
+                                        </div>
+                                        <div class="mb-4 flex  border p-2 border-gray-300 justify-between ">
+                                            <div class="font-bold w-1/2 border-r border-gray-300 ">Gender</div>
+                                            <div class=" p-2 w-1/2 border-r border-gray-300 ">{{user['gender1']}}</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Photo Column -->
+                                    <div class="flex-none w-1/3 flex justify-center items-center p-2">
+                                        <img src="https://placehold.co/150x200" alt="Profile Image"
+                                            class="w-full  border border-gray-300 object-cover">
+                                    </div>
+                                </div>
+
+                                <!-- Additional Details Section -->
+                                <div class="mt-4">
+                                    <div class="font-bold text-gray-700 border-t-2 border-gray-300 pt-4 mb-2">Additional
+                                        Details</div>
+                                    <div class="mb-4">
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Account Number</div>
+                                            <div>{{ user.account_no }}</div>
+                                        </div>
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Customer ID</div>
+                                            <div>{{ user.Customer_id }}</div>
+                                        </div>
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">IFSC Code</div>
+                                            <div>{{user.IFCS}}</div>
+                                        </div>
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Bank Balance</div>
+                                            <div>₹ {{user.account_balance}}</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Additional Info -->
+                                    <div class="mb-4">
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Nationality</div>
+                                            <div>{{user.country}}</div>
+                                        </div>
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Date & Time</div>
+                                            <div>{{user.Open_date}}, {{user.Open_time}}</div>
+                                        </div>
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Mobile Number</div>
+                                            <div>{{user.mobile}}</div>
+                                        </div>
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Email Address</div>
+                                            <div>{{user.email}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Nominee Details Section -->
+                                <div class="mt-4">
+                                    <div class="font-bold text-gray-700 border-t-2 border-gray-300 pt-4 mb-2">Nominee
+                                        Details</div>
+                                    <div class="mb-4">
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Nominee Name</div>
+                                            <div>{{ user.nominee_name1}}</div>
+                                        </div>
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Nominee Relation</div>
+                                            <div>{{ user.nominee_relation}}</div>
+                                        </div>
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Nominee DOB</div>
+                                            <div>{{user.nominee_dob}}</div>
+                                        </div>
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Nominee Mobile Number</div>
+                                            <div>{{user.nominee_contact}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Present Address Section -->
+                                <div class="mt-6">
+                                    <div class="text-lg font-bold text-gray-700 border-t-2 border-gray-300 pt-4 mb-2">
+                                        <i class="ri-map-pin-line w-5 h-5 mr-2 text-red-600"></i> Address
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Address</div>
+                                            <div>{{user.first_line1}}</div>
+                                        </div>
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">State/UT</div>
+                                            <div>{{user.state}}</div>
+                                        </div>
+
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">District</div>
+                                            <div>{{user.district}}</div>
+                                        </div>
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Pincode</div>
+                                            <div>{{user.pincode1}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Document Section -->
+                                <div class="mt-6">
+                                    <div class="text-lg font-bold text-gray-700 border-t-2 border-gray-300 pt-4 mb-2">
+                                        <i class="ri-file-copy-2-line w-5 h-5 mr-2 text-red-600"></i> Document
+                                    </div>
+                                    <div class="border-t border-gray-300 p-2">
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Document Type</div>
+                                            <div>{{user.document}}</div>
+                                        </div>
+                                        <div class="flex justify-between border-b border-gray-300 p-2">
+                                            <div class="font-bold">Document Number</div>
+                                            <div>{{user.doc_num1}}</div>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <div class="font-bold p-2">Document Image</div>
+                                            <img src="https://placehold.co/1500x2000" alt="Document Image"
+                                                class="w-[1500px] h-[2000px] border border-gray-300 object-cover p-2">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="mt-6 flex justify-center space-x-4 p-2 items-center w-full gap-4">
+                                    <div class="text-lg font-bold text-gray-700 border-t-2 border-gray-300 pt-4 mb-2">
+                                        <button onclick="accept_account('{{user._id}}')"
+                                            class="text-lg  text-white bg-black py-2 rounded-full px-6 "> <i
+                                                class="ri-user-follow-line w-5 h-5 mr-2 text-red-600"></i> Accept 
+                                        </button>
+                                        <button onclick="delete_account('{{user._id}}')"
+                                            class="text-lg  text-black border border-black py-2 rounded-full px-6 "> <i
+                                                class="ri-user-unfollow-line w-5 h-5 mr-2 text-red-600"></i> Reject
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -84,6 +294,15 @@
                 row.classList.add('bg-white');     // Apply background color for odd rows
             }
         });
+
+        // Function to open the modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+        // Function to close the modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
     </script>
 
 

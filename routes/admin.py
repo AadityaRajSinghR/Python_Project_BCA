@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, session, redirect, url_for
-from backend.getData import fetch_all_data
+from backend.getData import fetch_all_data , fetch_new_registered_data
 
 admin = Blueprint('admin', __name__)
 
@@ -8,9 +8,10 @@ admin = Blueprint('admin', __name__)
 @admin.route('/Dashboard')
 def Dashboard():
     page = "Dashboard"
+    New = fetch_new_registered_data()
     adminLog = session.get('is_admin', None)  # Check admin session data inside the route
     if adminLog:
-        return render_template('Admin/Dashboard.html', page=page)
+        return render_template('Admin/Dashboard.html', page=page, users=New)
     else:
         return redirect(url_for('home.Login'))  # Redirect to login if not logged in
     

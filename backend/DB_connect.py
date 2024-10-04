@@ -1,11 +1,10 @@
 #connect Database
 from pymongo import MongoClient
-
-
 import os
 from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
+
 # Get the DB_PASS from environment variables
 DB_PASS = os.getenv('DB_PASS')
 if not DB_PASS:

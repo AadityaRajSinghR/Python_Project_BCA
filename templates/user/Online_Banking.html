@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="flex h-screen">
+
+        <!-- Include the sidebar in the layout -->
+        {% include 'user/sidebar.html' %}
+
+        <!-- Main Content -->
+        <div class="flex-1 ml-[20%] w-[80%] p-6">
+            <!-- Dashboard Header -->
+            <div class="flex items-center justify-between bg-[#D65B5B] p-4 rounded-t-lg">
+                <div class="flex items-center text-white">
+                    <i class="ri-lock-line mr-2 text-2xl"></i>
+                    <h2 class="text-xl font-semibold">Online Banking</h2>
+                </div>
+
+                <div class="flex space-x-4">
+                    <button class="bg-white text-[#D65B5B] p-2 rounded-full">
+                        <div class="w-6 h-6">
+                            <i class="ri-notification-line"></i>
+                        </div>
+                    </button>
+                    <button class="bg-white text-[#D65B5B] p-2 rounded-full">
+                        <div class="w-6 h-6">
+                            <a href="/logout">
+
+                                <i class="ri-logout-circle-r-line"></i>
+                            </a>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- User Table -->
+            <div class="bg-gray-200 p-4 rounded-b-lg mt-4">
+
+                <!-- Personal Information (2) -->
+                <div class="filds  p-5">
+                    <div class="label flex gap-5 items-center mb-5">
+                        <i
+                            class="ri-user-line border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[16px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
+                        <label class="font-medium text-[#B03A37] text-[20px]">Sender Information</label>
+                    </div>
+                    <div class="mb-4 grid grid-cols-2 gap-4">
+                        <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                            <label for="Account Number" class="block text-sm font-medium text-gray-700">Select Account Number
+                                *</label>
+                            <select id="Account Number" aria-label="Select Account Number"
+                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                <option>Select Account Number</option>
+                                <option value="78945612304125">78945612304125</option>
+                        
+                            </select>
+                        </div>
+                        <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                            <label for="receiverAccountNo" class="block text-sm font-medium text-gray-700">Enter Receiver Account No
+                                *</label>
+                            <input type="text" id="receiverAccountNo" aria-label="Receiver Account No"
+                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        </div>
+                        <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                            <label for="Receiver_Contect_No" class="block text-sm font-medium text-gray-700">Enter Receiver Contect No
+                                *</label>
+                                <input type="text" id="Receiver_Contect_No" aria-label="Receiver Account No"
+                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        </div>
+
+                        <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
+                            <label for="SendingAmount" class="block text-sm font-medium text-gray-700">Amount
+                                *</label>
+                            <input type="text" id="SendingAmount" aria-label="Amount"
+                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                        </div>
+                    </div>
+                    <button class="bg-[#B03A37] text-white px-6 py-3 rounded-full" onclick="send_money()"  > Send Money</button>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+<script>
+
+function send_money(){
+    prompt("Enter OTP ")
+}
+
+
+</script>
+    
+
+</body>
+
+</html>

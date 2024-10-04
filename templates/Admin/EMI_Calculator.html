@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/emi_cal.css') }}">
-
-
-</head>
-
 <body class="bg-gray-100">
 
     <div class="flex h-screen">
@@ -21,80 +7,7 @@
 
         <!-- Main Content -->
         <div class="flex-1 ml-[20%] w-[80%] p-6">
-            <!-- Header Section -->
-            <header class="bg-[#D65B5B] text-white p-4 rounded-t-lg shadow-lg flex items-center justify-between">
-                <div class="flex items-center space-x-2">
-                    <i class=" text-2xl ri-calculator-line"></i>
-                    <h1 class="text-xl font-semibold">EMI calculator</h1>
-                </div>
-            </header>
-
-            <!-- Main Content -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white rounded-b-lg shadow-lg p-4">
-                <div class="bg-gray-100 p-4 rounded-lg space-y-6">
-                    <!-- Loan Amount -->
-                    <div>
-                        <label class="flex items-center space-x-2 text-lg font-semibold">
-                            <i class="text-2xl text-[#D65B5B] ri-money-rupee-circle-line"></i>
-                            <span>Loan amount</span>
-                        </label>
-                        <div class="flex items-center space-x-4">
-                            <input type="range" id="loanAmountSlider" min="10000" max="100000" value="20000"
-                                class="slider w-full" oninput="updateLoanAmount()">
-                            <input type="text" id="loanAmountInput" min="10000" max="100000" value="20000"
-                                class="w-28 text-center px-2 py-1 border rounded-lg" oninput="syncLoanAmountWithInput()">
-                        </div>
-                    </div>
-            
-                    <!-- Rate of Interest -->
-                    <div>
-                        <label class="flex items-center space-x-2 text-lg font-semibold">
-                            <i class="text-2xl text-[#D65B5B] ri-percent-line"></i>
-                            <span>Rate of interest</span>
-                        </label>
-                        <div class="flex items-center space-x-4">
-                            <input type="range" id="interestRateSlider" min="1" max="20" step="0.1" value="12.0"
-                                class="slider w-full" oninput="updateInterestRate()">
-                            <input type="text" id="interestRateInput" min="1" max="20" step="0.1" value="12.0"
-                                class="w-28 text-center px-2 py-1 border rounded-lg" oninput="syncInterestRateWithInput()">
-                        </div>
-                    </div>
-            
-                    <!-- Loan Tenure -->
-                    <div>
-                        <label class="flex items-center space-x-2 text-lg font-semibold">
-                            <i class="text-2xl text-[#D65B5B] ri-timer-line"></i>
-                            <span>Loan tenure</span>
-                        </label>
-                        <div class="flex items-center space-x-4">
-                            <input type="range" id="loanTenureSlider" min="1" max="30" value="5" class="slider w-full"
-                                oninput="updateLoanTenure()">
-                            <input type="text" id="loanTenureInput" min="1" max="30" value="5"
-                                class="w-28 text-center px-2 py-1 border rounded-lg" oninput="syncLoanTenureWithInput()">
-                        </div>
-                    </div>
-            
-                    <!-- EMI Calculation Results -->
-                    <div class="bg-white p-4 rounded-lg shadow">
-                        <p class="font-semibold">Monthly EMI: <span id="emiAmount" class="float-right">₹66,000</span></p>
-                        <p>Principal amount: <span id="principalAmount" class="float-right">₹123,455</span></p>
-                        <p>Interest amount: <span id="interestAmount" class="float-right">₹56,000</span></p>
-                        <p>Total amount: <span id="totalAmount" class="float-right">₹1,234,567</span></p>
-                    </div>
-            
-                    <!-- Apply Button -->
-                   <a href="/Loan_Apply"> <button class="w-full bg-[#D65B5B] text-white py-2 rounded-lg hover:bg-red-500">Apply for Loan</button></a>
-                </div>
-            
-                <!-- Right Section (Graph and Buttons) -->
-                <div class="p-4">
-                    <!-- Highcharts Placeholder -->
-                    <div id="loanChartContainer" class="h-64 bg-gray-200 rounded-lg"></div>
-                </div>
-            
-            </div>
-            
-
+            {% include 'Home/EMI_Calculator.html' %}
         </div>
     </div>
 
