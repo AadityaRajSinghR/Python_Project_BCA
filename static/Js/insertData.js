@@ -34,7 +34,7 @@ insertData.addEventListener("click", () => {
         'country', 'occupation',
         'nominee_name1', 'nominee_contact',
         'nominee_relation', 'nominee_dob',
-        'state', 'first_line1','district',
+        'state', 'first_line1', 'district',
         'pincode1', 'email',
         'mobile', 'fullname1',
         'dob1', 'gender1',
@@ -60,7 +60,12 @@ insertData.addEventListener("click", () => {
             if (field.classList.contains('is-valid')) {
                 const fieldValue = field.value;
                 console.log(fieldValue, ':', fieldName);
-                data[fieldName] = fieldValue.toUpperCase();
+                if (field !== document.getElementById('create-password')) {
+                    data[fieldName] = fieldValue.toUpperCase();
+                } else {
+
+                    data[fieldName] = fieldValue;
+                }
                 verified++;
             }
         } else {
