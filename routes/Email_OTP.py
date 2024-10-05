@@ -3,6 +3,17 @@ import random, smtplib, time, string
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+
+import os
+from dotenv import load_dotenv
+# Load environment variables from .env file
+load_dotenv()
+
+# Get the MAIL_PASS from environment variables
+MAIL_PASS = os.getenv('MAIL_PASS')
+if not MAIL_PASS:
+    raise ValueError("Environment variable MAIL_PASS not set.")
+
 OTP_s = Blueprint('OTP_s',__name__)
 
 # In-memory storage for OTP data
@@ -24,7 +35,7 @@ def store_otp(user_identifier):
 # Function to send an OTP via email using smtplib
 def send_email_otp(receiver_email, otp):
     sender_email = "python.mongodb1@gmail.com"  # Replace with your email
-    sender_password = "ntxz arft crtd qfgt"        # Replace with your password
+    sender_password = MAIL_PASS        # Replace with your password
 
     subject = "Your OTP Code"
     body = f"Your OTP code is {otp}. It will expire in 5 minutes."
