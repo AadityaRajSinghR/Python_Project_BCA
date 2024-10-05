@@ -12,7 +12,7 @@ import routes.login as login
 import routes.logout as logout
 
 import routes.delete_ac as Delete_account
-import routes.admin_deshboard as admin_dashboard
+import routes.admin_dashboard as admin_dashboard
 
 app = Flask(__name__)
 app.secret_key = 'MySecretKey'
