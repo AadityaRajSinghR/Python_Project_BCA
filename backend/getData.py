@@ -55,3 +55,16 @@ def account_delete(id):
         print(f"Error in account_delete function: {str(e)}")
         raise  # Re-raise the exception for further handling
 
+
+def account_activate(id):
+    try:
+        db = connect_db()  # Connect to MongoDB
+        collection = db['All_Accounts']  # Replace with your collection name
+        if not ObjectId.is_valid(id):
+            raise ValueError("Invalid ID format")
+
+        result = collection.update_one({'_id': ObjectId(id)}, {'$set': {'is_active': True}})
+        return result.modified_count > 0  # Return True if the account was activated
+    except Exception as e:
+        print(f"Error in account_activate function: {str(e)}")
+        raise  # Re-raise the exception for further handling
