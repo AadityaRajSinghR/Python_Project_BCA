@@ -1,10 +1,19 @@
 from flask import request, jsonify, Blueprint
 import string, time, random
+from twilio.rest import Client
 
 OTP_Mobile = Blueprint('OTP_Mobile', __name__)
 
 # In-memory storage for OTP data
 user_mobile_otp_data = {}
+
+# Twilio configuration
+TWILIO_ACCOUNT_SID = 'AC80b05358ae4b55b69fed1c00cd4a5dfc'  # Replace with your Twilio account SID
+TWILIO_AUTH_TOKEN = '49e9b6859194f42a99a4b0f78b1fffe3'      # Replace with your Twilio auth token
+TWILIO_PHONE_NUMBER = '+18142050422'  # Replace with your Twilio phone number
+
+# Initialize Twilio client
+twilio_client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 # Function to generate a random 6-character OTP
 def generate_mobile_otp(length=6):
@@ -19,12 +28,15 @@ def store_mobile_otp(user_identifier):
     user_mobile_otp_data[user_identifier] = {'otp': otp, 'expires_at': expiration_time}
     return otp
 
-# Function to send an OTP via mobile (placeholder implementation)
+# Function to send an OTP via Twilio
 def send_mobile_otp_via_service(receiver_mobile, otp):
     try:
-        print(f"Sending OTP: {otp} to {receiver_mobile}")
-        # mobile sending logic goes here (e.g., using an SMS gateway)
-        print(f"OTP sent successfully to {receiver_mobile}")
+        message = twilio_client.messages.create(
+            body=f"Your OTP is: {otp}",
+            from_=TWILIO_PHONE_NUMBER,
+            to=  '+91' + receiver_mobile
+        )
+        print(f"OTP sent successfully to {receiver_mobile}, Message SID: {message.sid}")
     except Exception as e:
         print(f"Error sending OTP to {receiver_mobile}: {e}")
 
@@ -73,8 +85,3 @@ def verify():
     
     return jsonify({'message': 'Mobile number and OTP are required'}), 400
 
-if __name__ == '__main__':
-    from flask import Flask
-    app = Flask(__name__)
-    app.register_blueprint(OTP_Mobile)
-    app.run(debug=True)
