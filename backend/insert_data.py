@@ -19,3 +19,14 @@ def insert_data_route():
     return jsonify({"message": "Your Account Open Request has been submitted"}), 201
     
     
+
+@insert_data.route('/upload_data', methods=['POST'])
+def upload_data():
+    data = request.json # Retrieve JSON data from the request
+    collection = db['Loan_accounts']
+    
+    if not data:
+        return jsonify({"error": "No data provided"}), 400
+    collection.insert_one(data)
+    
+    return jsonify({"message": "Your Loan Request has been submitted"}), 201

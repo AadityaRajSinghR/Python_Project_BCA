@@ -61,17 +61,22 @@
                 <!-- Account Information (1) -->
                 <div class="filds activeflds p-5">
                     <div class="label flex gap-5 items-center mb-5">
-                        <i class="ri-info-i border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[20px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
+                        <i
+                            class="ri-info-i border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[20px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
                         <label class="font-medium text-[#B03A37] text-[20px]">Account Information</label>
                     </div>
                     <div class="mb-4 grid grid-cols-2 gap-4">
                         <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
-                            <label for="account_number" class="block text-sm font-medium text-gray-700">Enter Existing Account number *</label>
-                            <input type="text" id="account_number" aria-label="Enter existing Account number" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                            <label for="account_number" class="block text-sm font-medium text-gray-700">Enter Existing
+                                Account number *</label>
+                            <input type="text" id="account_number" aria-label="Enter existing Account number"
+                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                         </div>
                         <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
-                            <label for="check_account_btn" class="block text-sm font-medium text-gray-700">Check account</label>
-                            <button id="check_account_btn" onclick="check_account()" class="mt-1 bg-[#B03A37] text-white px-16 py-2 rounded-full">Check</button>
+                            <label for="check_account_btn" class="block text-sm font-medium text-gray-700">Check
+                                account</label>
+                            <button id="check_account_btn" onclick="check_account()"
+                                class="mt-1 bg-[#B03A37] text-white px-16 py-2 rounded-full">Check</button>
                         </div>
                     </div>
                 </div>
@@ -99,20 +104,17 @@
                         <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
                             <label for="personal_gender" class="block text-sm font-medium text-gray-700">Select Gender
                                 *</label>
-                            <select id="personal_gender" aria-label="Select Gender"
+                            <input id="personal_gender" aria-label="Select Gender"
                                 class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                                <option>Select Gender</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="other">Other</option>
-                            </select>
+
                         </div>
                         <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
-                            <label for="personal_marital_status" class="block text-sm font-medium text-gray-700">Marital Status
+                            <label for="personal_marital_status" class="block text-sm font-medium text-gray-700">Marital
+                                Status
                                 *</label>
                             <select id="personal_marital_status" aria-label="Marital Status"
                                 class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                                <option>Marital Status</option>
+                                <option value="" >Marital Status</option>
                                 <option value="single">Single</option>
                                 <option value="married">Married</option>
                                 <option value="divorce">Divorce</option>
@@ -187,18 +189,23 @@
                 <!-- Identification Information (4) -->
                 <div class="filds  p-5">
                     <div class="label flex gap-5 items-center mb-5">
-                        <i class="ri-contacts-line border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[16px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
+                        <i
+                            class="ri-contacts-line border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[16px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
                         <label class="font-medium text-[#B03A37] text-[20px]">Identification Information</label>
                     </div>
 
                     <div class="mb-4 grid grid-cols-2 gap-4">
                         <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
-                            <label for="identification_aadhar" class="block text-sm font-medium text-gray-700">Aadhar Number *</label>
-                            <input type="text" id="identification_aadhar" aria-label="Aadhar Number" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                            <label for="identification_aadhar" class="block text-sm font-medium text-gray-700">Aadhar
+                                Number *</label>
+                            <input type="number" id="identification_aadhar" aria-label="Aadhar Number"
+                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                         </div>
                         <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
-                            <label for="identification_pan" class="block text-sm font-medium text-gray-700">Pan Card Number *</label>
-                            <input type="text" id="identification_pan" aria-label="Pan Card Number" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                            <label for="identification_pan" class="block text-sm font-medium text-gray-700">Pan Card
+                                Number *</label>
+                            <input type="text" id="identification_pan" aria-label="Pan Card Number"
+                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                         </div>
                     </div>
                 </div>
@@ -206,14 +213,18 @@
                 <!-- Employment  Information  (5)-->
                 <div class="filds  p-5">
                     <div class="label flex gap-5 items-center mb-5">
-                        <i class="ri-contacts-line border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[16px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
+                        <i
+                            class="ri-contacts-line border-gray-300 bg-[#B03A37] text-[#D9D9D9] text-[16px] w-10 h-10 p-2 border border-zinc-300 rounded-full flex items-center justify-center"></i>
                         <label class="font-medium text-[#B03A37] text-[20px]">Employment Information</label>
                     </div>
 
                     <div class="mb-4 grid grid-cols-2 gap-4">
                         <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
-                            <label for="employment_status" class="block text-sm font-medium text-gray-700">Employment Status *</label>
-                            <select id="employment_status" aria-label="Select Employment Status" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                            <label for="employment_status" class="block text-sm font-medium text-gray-700">Employment
+                                Status *</label>
+                            <select id="employment_status" aria-label="Select Employment Status"
+                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                                <option value="">Select employment status</option>
                                 <option value="Employed">Employed</option>
                                 <option value="Un-Employed">Un-Employed</option>
                                 <option value="Self-Employed">Self-Employed</option>
@@ -223,12 +234,16 @@
                             </select>
                         </div>
                         <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
-                            <label for="net_monthly_income" class="block text-sm font-medium text-gray-700">Net Monthly Income *</label>
-                            <input type="text" id="net_monthly_income" aria-label="Net Monthly Income" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                            <label for="net_monthly_income" class="block text-sm font-medium text-gray-700">Net Monthly
+                                Income *</label>
+                            <input type="text" id="net_monthly_income" aria-label="Net Monthly Income"
+                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                         </div>
                         <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
-                            <label for="monthly_housing_income" class="block text-sm font-medium text-gray-700">Monthly Housing Income *</label>
-                            <input type="text" id="monthly_housing_income" aria-label="Monthly Housing Income" class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
+                            <label for="monthly_housing_income" class="block text-sm font-medium text-gray-700">Monthly
+                                Housing Income *</label>
+                            <input type="text" id="monthly_housing_income" aria-label="Monthly Housing Income"
+                                class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                         </div>
                     </div>
                 </div>
@@ -249,7 +264,7 @@
 
                                 <!-- Home Loan Option -->
                                 <div class="mr-2 flex flex-col items-start border-gray-200 py-2">
-                                    <input type="radio" name="LoanType" id="home_loan">
+                                    <input type="radio" name="LoanType" value="Home Loan"  id="home_loan">
                                     <label for="home_loan">
                                         <i
                                             class="ri-home-heart-line text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl"></i>
@@ -258,7 +273,7 @@
 
                                 <!-- Car Loan Option -->
                                 <div class="mr-2 flex flex-col items-start border-gray-200 py-2">
-                                    <input type="radio" name="LoanType" id="car_loan">
+                                    <input type="radio" name="LoanType" value="Car Loan" id="car_loan">
                                     <label for="car_loan">
                                         <i
                                             class="ri-car-line text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl"></i>
@@ -267,7 +282,7 @@
 
                                 <!-- Personal Loan Option -->
                                 <div class="mr-2 flex flex-col items-start border-gray-200 py-2">
-                                    <input type="radio" name="LoanType" id="personal_loan">
+                                    <input type="radio" name="LoanType" value="Personal Loan" id="personal_loan">
                                     <label for="personal_loan">
                                         <i
                                             class="ri-user-line text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl"></i>
@@ -276,7 +291,7 @@
 
                                 <!-- Gold Loan Option -->
                                 <div class="mr-2 flex flex-col items-start border-gray-200 py-2">
-                                    <input type="radio" name="LoanType" id="gold_loan">
+                                    <input type="radio" name="LoanType" value="Gold Loan" id="gold_loan">
                                     <label for="gold_loan"
                                         class=" w-16 h-16  bg-no-repeat bg-center bg-[url('{{url_for('static', filename='img/icons/gold.png')}}')] text-[#B03A37] bg-[#D9D9D9] p-2 rounded-full text-5xl">
                                     </label>
@@ -318,7 +333,7 @@
 
                     <div class="mb-4 grid grid-cols-2 gap-4">
                         <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
-                            <label for="fullname" class="block text-sm font-medium text-gray-700">Do you have
+                            <label for="outstanding_loans" class="block text-sm font-medium text-gray-700">Do you have
                                 any outstanding loans *</label>
                             <select id="outstanding_loans" aria-label="Do you have any outstanding loans"
                                 class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
@@ -328,18 +343,21 @@
                             </select>
                         </div>
                         <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
-                            <label for="outstanding_loan_amount" class="block text-sm font-medium text-gray-700">How much is
+                            <label for="outstanding_loan_amount" class="block text-sm font-medium text-gray-700">How
+                                much is
                                 your
                                 outstanding loan amount?
                                 *</label>
-                            <input type="text" value="0" id="outstanding_loan_amount" aria-label="Outstanding Loan Amount"
+                            <input type="number" value="0" id="outstanding_loan_amount"
+                                aria-label="Outstanding Loan Amount"
                                 class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                         </div>
                         <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
-                            <label for="repayment_installments" class="block text-sm font-medium text-gray-700">In how many
+                            <label for="repayment_installments" class="block text-sm font-medium text-gray-700">In how
+                                many
                                 installments will you make the repayment?
                                 *</label>
-                            <input type="text" id="repayment_installments" aria-label="Repayment Installments"
+                            <input type="number" id="repayment_installments" max="50" aria-label="Repayment Installments"
                                 class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                         </div>
 
@@ -373,7 +391,7 @@
                                 *</label>
                             <select id="guarantor_relationship" aria-label="Select Relationship"
                                 class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
-                                <option>Select Relationship</option>
+                                <option value="" >Select Relationship</option>
                                 <option value="spouse">Spouse</option>
                                 <option value="child">Child</option>
                                 <option value="sibling">Sibling</option>
@@ -395,13 +413,15 @@
                                 class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                         </div>
                         <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
-                            <label for="guarantor_address1" class="block text-sm font-medium text-gray-700">Address Line 1
+                            <label for="guarantor_address1" class="block text-sm font-medium text-gray-700">Address Line
+                                1
                                 *</label>
                             <input type="text" id="guarantor_address1" aria-label="Address Line 1"
                                 class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
                         </div>
                         <div class="mt-1 flex flex-col items-start border-gray-200 py-2">
-                            <label for="guarantor_address2" class="block text-sm font-medium text-gray-700">Address Line 2
+                            <label for="guarantor_address2" class="block text-sm font-medium text-gray-700">Address Line
+                                2
                             </label>
                             <input type="text" id="guarantor_address2" aria-label="Address Line 2"
                                 class="w-full mt-1 p-2 outline-none border border-gray-300 rounded">
@@ -422,7 +442,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Consent & Agreement  (9)-->
                 <div class="filds  p-5">
                     <div class="label flex gap-5 items-center mb-5">
@@ -451,12 +471,14 @@
                         <div class="mt-1 flex items-start border-gray-200 py-2">
                             <input type="checkbox" id="terms_conditions" aria-label="I read all terms and conditions"
                                 class=" mt-1 mr-2 p-2 outline-none border border-gray-300 rounded">
-                            <label for="terms_conditions" class="block text-sm font-medium text-gray-700">I read all term
+                            <label for="terms_conditions" class="block text-sm font-medium text-gray-700">I read all
+                                term
                                 and Condition
                                 *</label>
                         </div>
                         <div class="mt-1 flex items-start border-gray-200 py-2">
-                            <input type="checkbox" id="credit_check" aria-label="I give the Authorization to Perform Credit Check"
+                            <input type="checkbox" id="credit_check"
+                                aria-label="I give the Authorization to Perform Credit Check"
                                 class=" mt-1 mr-2 p-2 outline-none border border-gray-300 rounded">
                             <label for="credit_check" class="block text-sm font-medium text-gray-700">I give the
                                 Authorization to Perform Credit Check

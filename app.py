@@ -13,6 +13,7 @@ import routes.logout as logout
 
 import routes.delete_ac as Delete_account
 import routes.admin_dashboard as admin_dashboard
+import routes.loan as loan
 
 app = Flask(__name__)
 app.secret_key = 'MySecretKey'
@@ -31,6 +32,7 @@ app.register_blueprint(Delete_account.Delete_account)
 app.register_blueprint(insert_data.insert_data)
 
 app.register_blueprint(admin_dashboard.admin_dashboard)
+app.register_blueprint(loan.loan_app)
 
 
 

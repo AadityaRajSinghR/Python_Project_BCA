@@ -1,5 +1,4 @@
 # Get data from mongoDB Database using python flask and show in table form
-
 from backend.DB_connect import connect_db
 from bson.objectid import ObjectId
 
@@ -68,3 +67,15 @@ def account_activate(id):
     except Exception as e:
         print(f"Error in account_activate function: {str(e)}")
         raise  # Re-raise the exception for further handling
+
+
+def fetch_account_data(account_number):
+    db = connect_db()  # Connect to MongoDB
+    collection = db['All_Accounts']  # Replace with your collection name
+    account = collection.find_one({'account_no': account_number})  # Find account by account number
+    
+    # Convert ObjectId fields to strings if present
+    if account:
+        account['_id'] = str(account['_id'])  # Example for converting _id
+        # Repeat for any other ObjectId fields in your document
+    return account  # Return the account data
