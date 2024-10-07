@@ -1,16 +1,28 @@
 from flask import request, jsonify, Blueprint
 import string, time, random
 from twilio.rest import Client
+from dotenv import load_dotenv
+import os
 
 OTP_Mobile = Blueprint('OTP_Mobile', __name__)
 
 # In-memory storage for OTP data
 user_mobile_otp_data = {}
 
+# Load environment variables
+load_dotenv()
+TWILIO_SID = os.getenv('TWILIO_SID')
+TWILIO_TOKEN = os.getenv('TWILIO_TOKEN')
+TWILIO_PHONE = os.getenv('TWILIO_PHONE')
+
+if not all([TWILIO_SID, TWILIO_TOKEN, TWILIO_PHONE]):
+    raise ValueError("Twilio environment variables are not set.")
+
+
 # Twilio configuration
-TWILIO_ACCOUNT_SID = 'AC80b05358ae4b55b69fed1c00cd4a5dfc'  # Replace with your Twilio account SID
-TWILIO_AUTH_TOKEN = '49e9b6859194f42a99a4b0f78b1fffe3'      # Replace with your Twilio auth token
-TWILIO_PHONE_NUMBER = '+18142050422'  # Replace with your Twilio phone number
+TWILIO_ACCOUNT_SID = TWILIO_SID
+TWILIO_AUTH_TOKEN = TWILIO_TOKEN
+TWILIO_PHONE_NUMBER = TWILIO_PHONE
 
 # Initialize Twilio client
 twilio_client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)

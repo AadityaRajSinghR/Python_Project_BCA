@@ -2,13 +2,19 @@ from flask import  request, jsonify,Blueprint
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import os
+from dotenv import load_dotenv
+# Load environment variables
+load_dotenv()
+
+MAIL_PASS = os.getenv('MAIL_PASS')
 
 success_mail = Blueprint('success_mail',__name__)
 
 # Function to send an OTP via email using smtplib
 def send_message(receiver_email, username):
-    sender_email = "python.mongodb1@gmail.com"  # Replace with your email
-    sender_password = "ntxz arft crtd qfgt"        # Replace with your password
+    sender_email = "python.mongodb1@gmail.com"  
+    sender_password = MAIL_PASS      
 
     subject = "ThankYou Message - AU Bank"
     body = f"Dear, \n\t {username} Thank you for creating your account.\n Now You can access your account in 2-3 days after Verification.\n\n Best regards,\n\t AU Bank"
